@@ -1,134 +1,7 @@
-/*import 'package:flutter/material.dart';
-
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Indicator Dots Example',
-      theme: ThemeData(
-        primarySwatch: Colors.purple,
-      ),
-      home: const MyHomePage(),
-      debugShowCheckedModeBanner: false,
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _currentPage = 0;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Indicator Dots Example'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Current Page: $_currentPage',
-              style: TextStyle(fontSize: 20),
-            ),
-            SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: List.generate(3, (index) {
-                return GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      _currentPage = index;
-                    });
-                  },
-                  child: Container(
-                    width: _currentPage == index ? 25.0 : 6.0,
-                    height: 6.0,
-                    margin: EdgeInsets.symmetric(horizontal: 4.0),
-                    decoration: BoxDecoration(
-                      borderRadius: _currentPage == index
-                          ? BorderRadius.circular(12.0)
-                          : BorderRadius.circular(5.0),
-                      color: _currentPage == index ? Colors.blue : Colors.grey,
-                    ),
-                  ),
-                );
-              }),
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            // Simulate changing the current page
-            _currentPage = (_currentPage + 1) % 3;
-          });
-        },
-        child: Icon(Icons.arrow_forward),
-      ),
-    );
-  }
-}
-*/
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() => runApp(const MyApp());
-
-class MyElevatedButton extends StatelessWidget {
-  final BorderRadiusGeometry? borderRadius;
-  final double? width;
-  final double height;
-  final Gradient gradient;
-  final VoidCallback? onPressed;
-  final Widget child;
-
-  const MyElevatedButton({
-    Key? key,
-    required this.onPressed,
-    required this.child,
-    this.borderRadius,
-    this.width,
-    this.height = 44.0,
-    this.gradient = const LinearGradient(colors: [Colors.cyan, Colors.indigo]),
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final borderRadius = this.borderRadius ?? BorderRadius.circular(0);
-    return Container(
-      width: width,
-      height: height,
-      decoration: BoxDecoration(
-        gradient: gradient,
-        borderRadius: borderRadius,
-      ),
-      child: ElevatedButton(
-        onPressed: onPressed,
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.transparent,
-          shadowColor: Colors.transparent,
-          shape: RoundedRectangleBorder(borderRadius: borderRadius),
-        ),
-        child: child,
-      ),
-    );
-  }
-}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -191,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           Positioned(
             top: MediaQuery.of(context).size.height *
-                0.50, // Overlaps the first container by 5%
+                0.45, // Overlaps the first container by 5%
             left: 0,
             right: 0,
             bottom: 0,
@@ -348,3 +221,90 @@ class GradientButton extends StatelessWidget {
     );
   }
 }
+
+/*import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Indicator Dots Example',
+      theme: ThemeData(
+        primarySwatch: Colors.purple,
+      ),
+      home: const MyHomePage(),
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key? key}) : super(key: key);
+
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _currentPage = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Indicator Dots Example'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Current Page: $_currentPage',
+              style: TextStyle(fontSize: 20),
+            ),
+            SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: List.generate(3, (index) {
+                return GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      _currentPage = index;
+                    });
+                  },
+                  child: Container(
+                    width: _currentPage == index ? 25.0 : 6.0,
+                    height: 6.0,
+                    margin: EdgeInsets.symmetric(horizontal: 4.0),
+                    decoration: BoxDecoration(
+                      borderRadius: _currentPage == index
+                          ? BorderRadius.circular(12.0)
+                          : BorderRadius.circular(5.0),
+                      color: _currentPage == index ? Colors.blue : Colors.grey,
+                    ),
+                  ),
+                );
+              }),
+            ),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            // Simulate changing the current page
+            _currentPage = (_currentPage + 1) % 3;
+          });
+        },
+        child: Icon(Icons.arrow_forward),
+      ),
+    );
+  }
+}
+*/
