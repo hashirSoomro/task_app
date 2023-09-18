@@ -231,7 +231,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       }),
                     ),
                     SizedBox(
-                      height: 25,
+                      height: 20,
                     ),
                     Text(
                       'Taskcy',
@@ -256,19 +256,20 @@ class _MyHomePageState extends State<MyHomePage> {
                       textAlign: TextAlign.center,
                     ),
                     SizedBox(
-                      height: 10,
+                      height: 5,
                     ),
                     Text(
                       'Create a unique emotional story that\ndescribes better than words',
                       style: TextStyle(
                           fontSize: 14,
+                          height: 1.8,
                           fontFamily: 'ProductSans',
                           fontWeight: FontWeight.w700,
-                          color: Color(0xFF8D8D8D)),
+                          color: Color(0xFF8D8D8D).withOpacity(0.6)),
                       textAlign: TextAlign.center,
                     ),
                     SizedBox(
-                      height: 15,
+                      height: 30,
                     ),
                     GradientButton(
                       onPressed: () {
