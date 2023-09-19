@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'onboard.dart';
 
 void main() => runApp(const MyApp());
 
@@ -43,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
             bottom:
                 MediaQuery.of(context).size.height * 0.45, // 55% of the screen
             child: Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage('assets/images/cover.jpg'),
                     fit: BoxFit.cover,
@@ -54,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Container(
                     height: 130,
                     width: 130,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage('assets/images/top_corn.png'),
                       ),
@@ -75,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Center(
                 child: Column(
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       height: 9,
                     ),
                     Row(
@@ -103,23 +104,23 @@ class _MyHomePageState extends State<MyHomePage> {
                         );
                       }),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Text(
                       'Taskcy',
                       style: GoogleFonts.pollerOne(
-                        textStyle: TextStyle(
+                        textStyle: const TextStyle(
                           fontSize: 48,
                           fontWeight: FontWeight.w400,
                           color: Color(0xFF756EF3),
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 6,
                     ),
-                    Text(
+                    const Text(
                       'Building Better\nWorkplaces',
                       style: TextStyle(
                           fontSize: 37,
@@ -128,7 +129,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           color: Color(0xFF2F394B)),
                       textAlign: TextAlign.center,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     Text(
@@ -141,13 +142,16 @@ class _MyHomePageState extends State<MyHomePage> {
                           color: Color(0xFF8D8D8D).withOpacity(0.6)),
                       textAlign: TextAlign.center,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                     GradientButton(
                       onPressed: () {
                         // Add your button's onPressed functionality here
-                        print('Button pressed');
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Onboard()),
+                        );
                       },
                       child: Text(
                         'Get Started',
@@ -193,12 +197,11 @@ class GradientButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        padding: EdgeInsets.zero,
+        padding: EdgeInsets.zero, backgroundColor: Colors.transparent,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),
         elevation: 4,
-        primary: Colors.transparent,
         shadowColor: Colors.black.withOpacity(0.2),
         minimumSize: Size(width, height), // Set width and height
       ),
