@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:task_app/signin.dart';
 
 class Onboard extends StatefulWidget {
   const Onboard({super.key});
@@ -82,8 +85,11 @@ class _OnboardState extends State<Onboard> {
                   SizedBox(
                     height: 35,
                   ),
-                  TextButton(
-                    onPressed: () {},
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => SignIn()));
+                    },
                     child: Text(
                       "Skip",
                       textAlign: TextAlign.right,
@@ -95,7 +101,7 @@ class _OnboardState extends State<Onboard> {
                         ),
                       ),
                     ),
-                  ),
+                  )
                 ],
               ),
             ),
@@ -118,7 +124,11 @@ class _OnboardState extends State<Onboard> {
                         _currentPage++;
                         print(_currentPage);
                       } else {
-                        _currentPage = 0;
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const SignIn()),
+                        );
                       }
                     });
                   },
