@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:task_app/signup.dart';
-
 import 'gradientButton.dart';
+import 'home.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({Key? key}) : super(key: key);
@@ -52,7 +52,7 @@ class _SignInState extends State<SignIn> {
               },
               icon: Icon(
                 Icons.arrow_back_ios_new,
-                size: 14,
+                size: 16,
               ),
               color: Color(0xFF002055),
             ),
@@ -195,10 +195,10 @@ class _SignInState extends State<SignIn> {
                 child: GradientButton(
                   onPressed: () {
                     // Add your button's onPressed functionality here
-                    /*Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => SignUp()),
-                            );*/
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Home()),
+                    );
                   },
                   child: Text(
                     'Sign In',

@@ -52,7 +52,7 @@ class _SignUpState extends State<SignUp> {
               },
               icon: Icon(
                 Icons.arrow_back_ios_new,
-                size: 14,
+                size: 16,
               ),
               color: Color(0xFF002055),
             ),
