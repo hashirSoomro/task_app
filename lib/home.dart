@@ -1,7 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter/src/rendering/box.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -17,15 +16,16 @@ class _HomeState extends State<Home> {
     'assets/images/photo.jpg'
   ];
   int _currentPage = 0;
-
+  Color homeIconColor = Color(0xFF848A94);
+  Color folderIconColor = Color(0xFF848A94);
+  Color chatIconColor = Color(0xFF848A94);
+  Color profileIconColor = Color(0xFF848A94);
+  double progress = 0.6;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Padding(
-          padding: EdgeInsets.only(
-            left: MediaQuery.of(context).size.width * 0.22,
-          ),
+        title: Center(
           child: Text(
             "Friday, 26",
             style: GoogleFonts.poppins(
@@ -281,7 +281,7 @@ class _HomeState extends State<Home> {
           Column(
             children: [
               Padding(
-                padding: EdgeInsets.only(top: 30, left: 30, right: 30),
+                padding: EdgeInsets.only(top: 24, left: 30, right: 30),
                 child: Row(
                   children: [
                     Text(
@@ -308,82 +308,105 @@ class _HomeState extends State<Home> {
                 ),
               ),
               SizedBox(
-                height: 24,
+                height: 14,
               )
             ],
           ),
           Expanded(
             child: Container(
-              child: ListView.builder(
-                itemCount: 3, // Adjust the number of containers as needed
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding: EdgeInsets.only(left: 24, right: 24, bottom: 15),
-                    child: Container(
-                      height: 80,
-                      width: 327,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(14),
-                          shape: BoxShape.rectangle,
-                          border: Border.all(
-                              color: Color.fromARGB(255, 218, 230, 250))
-                          // Change the color as desired
+              child: ScrollConfiguration(
+                behavior:
+                    ScrollConfiguration.of(context).copyWith(scrollbars: false),
+                child: ListView.builder(
+                  physics: NeverScrollableScrollPhysics(),
+                  itemCount: 3, // Adjust the number of containers as needed
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: EdgeInsets.only(left: 24, right: 24, bottom: 13),
+                      child: Container(
+                        height: 80,
+                        width: 327,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(14),
+                            shape: BoxShape.rectangle,
+                            border: Border.all(
+                                color: Color.fromARGB(255, 218, 230, 250))
+                            // Change the color as desired
+                            ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(15.0),
+                          child: Row(
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Productivity Mobile App",
+                                    style: GoogleFonts.poppins(
+                                      textStyle: const TextStyle(
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w400,
+                                        color: Color(0xFF848A94),
+                                        height: 1.2,
+                                      ),
+                                    ),
+                                  ),
+                                  Text(
+                                    "Create Detail Booking",
+                                    style: GoogleFonts.poppins(
+                                      textStyle: const TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w500,
+                                        color: Color(0xFF002055),
+                                        height: 1.2,
+                                      ),
+                                    ),
+                                  ),
+                                  Text(
+                                    "2 min ago",
+                                    style: GoogleFonts.poppins(
+                                      textStyle: const TextStyle(
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w400,
+                                        color: Color(0xFF848A94),
+                                        height: 1.2,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Spacer(),
+                              Center(
+                                child: Stack(
+                                  alignment: Alignment.center,
+                                  children: [
+                                    CircularProgressIndicator(
+                                      value: progress,
+                                      backgroundColor: Color(0xFFD1E2FE),
+                                      valueColor: AlwaysStoppedAnimation<Color>(
+                                          Color(0xFF756EF3)),
+                                    ),
+                                    Text(
+                                      '${(progress * 100).toStringAsFixed(0)}%',
+                                      style: GoogleFonts.poppins(
+                                        textStyle: const TextStyle(
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w500,
+                                          color: Color(0xFF002055),
+                                          height: 1.2,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
                           ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(15.0),
-                        child: Row(
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Productivity Mobile App",
-                                  style: GoogleFonts.poppins(
-                                    textStyle: const TextStyle(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w400,
-                                      color: Color(0xFF848A94),
-                                      height: 1.2,
-                                    ),
-                                  ),
-                                ),
-                                Text(
-                                  "Create Detail Booking",
-                                  style: GoogleFonts.poppins(
-                                    textStyle: const TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w500,
-                                      color: Color(0xFF002055),
-                                      height: 1.2,
-                                    ),
-                                  ),
-                                ),
-                                Text(
-                                  "2 min ago",
-                                  style: GoogleFonts.poppins(
-                                    textStyle: const TextStyle(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w400,
-                                      color: Color(0xFF848A94),
-                                      height: 1.2,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Spacer(),
-                            CircularProgressIndicator(
-                              value: 0.6,
-                              backgroundColor: Color(0xFFD1E2FE),
-                              valueColor: AlwaysStoppedAnimation<Color>(
-                                  Color(0xFF756EF3)),
-                            ),
-                          ],
                         ),
                       ),
-                    ),
-                  );
-                },
+                    );
+                  },
+                ),
               ),
             ),
           ),
@@ -393,23 +416,37 @@ class _HomeState extends State<Home> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                GestureDetector(
-                  onTap: () {},
+                InkWell(
+                  onTap: () {
+                    setState(() {
+                      folderIconColor = Color(0xFF848A94);
+                      homeIconColor = Color(0xFF756EF3);
+                      chatIconColor = Color(0xFF848A94);
+                      profileIconColor = Color(0xFF848A94);
+                    });
+                  },
                   child: ImageIcon(
                     AssetImage('assets/icons/home.png'),
                     size: 24,
-                    color: Color(0xFF848A94),
+                    color: homeIconColor,
                   ),
                 ),
-                GestureDetector(
-                  onTap: () {},
+                InkWell(
+                  onTap: () {
+                    setState(() {
+                      folderIconColor = Color(0xFF756EF3);
+                      homeIconColor = Color(0xFF848A94);
+                      chatIconColor = Color(0xFF848A94);
+                      profileIconColor = Color(0xFF848A94);
+                    });
+                  },
                   child: ImageIcon(
                     AssetImage('assets/icons/Folder.png'),
                     size: 24,
-                    color: Color(0xFF848A94),
+                    color: folderIconColor,
                   ),
                 ),
-                GestureDetector(
+                InkWell(
                   onTap: () {},
                   child: CircleAvatar(
                     radius: 25,
@@ -421,20 +458,34 @@ class _HomeState extends State<Home> {
                     ),
                   ),
                 ),
-                GestureDetector(
-                  onTap: () {},
+                InkWell(
+                  onTap: () {
+                    setState(() {
+                      folderIconColor = Color(0xFF848A94);
+                      homeIconColor = Color(0xFF848A94);
+                      chatIconColor = Color(0xFF756EF3);
+                      profileIconColor = Color(0xFF848A94);
+                    });
+                  },
                   child: ImageIcon(
                     AssetImage('assets/icons/chat.png'),
                     size: 24,
-                    color: Color(0xFF848A94),
+                    color: chatIconColor,
                   ),
                 ),
-                GestureDetector(
-                  onTap: () {},
+                InkWell(
+                  onTap: () {
+                    setState(() {
+                      folderIconColor = Color(0xFF848A94);
+                      homeIconColor = Color(0xFF848A94);
+                      chatIconColor = Color(0xFF848A94);
+                      profileIconColor = Color(0xFF756EF3);
+                    });
+                  },
                   child: ImageIcon(
                     AssetImage('assets/icons/profile.png'),
                     size: 24,
-                    color: Color(0xFF848A94),
+                    color: profileIconColor,
                   ),
                 )
               ],

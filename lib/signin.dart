@@ -16,10 +16,7 @@ class _SignInState extends State<SignIn> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Padding(
-          padding: EdgeInsets.only(
-              left: MediaQuery.of(context).size.width *
-                  0.22), // Adjust the left padding as needed
+        title: Center(
           child: Text(
             "Sign In",
             style: GoogleFonts.poppins(
