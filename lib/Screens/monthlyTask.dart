@@ -94,7 +94,7 @@ class _MonthlyTaskState extends State<MonthlyTask> {
                   CalendarWidget(),
                   Flexible(
                     child: Container(
-                      height: 298,
+                      height: 270,
                       margin: EdgeInsets.only(
                           top: 10, right: 10, left: 10, bottom: 0),
                       decoration: BoxDecoration(
@@ -105,7 +105,7 @@ class _MonthlyTaskState extends State<MonthlyTask> {
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: TableCalendar(
-                        rowHeight: 40,
+                        rowHeight: 30,
                         firstDay: DateTime.utc(2023, 1, 1),
                         lastDay: DateTime.utc(2023, 12, 31),
                         focusedDay: _focusedDay,
@@ -129,19 +129,16 @@ class _MonthlyTaskState extends State<MonthlyTask> {
                             fontSize: 13,
                             fontWeight: FontWeight.w500,
                             color: Color(0xFF002055),
-                            height: 25.0 / 20.0,
                           ),
                           selectedTextStyle: TextStyle(
                             fontSize: 13,
                             fontWeight: FontWeight.w500,
                             color: Color(0xFF756EF3),
-                            height: 25.0 / 20.0,
                           ),
                           todayTextStyle: TextStyle(
                             fontSize: 13,
                             fontWeight: FontWeight.w500,
                             color: Color(0xFF756EF3),
-                            height: 25.0 / 20.0,
                           ),
                           selectedDecoration: BoxDecoration(
                             color: Colors.transparent,
@@ -163,7 +160,6 @@ class _MonthlyTaskState extends State<MonthlyTask> {
                             fontSize: 18,
                             fontWeight: FontWeight.w500,
                             color: Color(0xFF756EF3),
-                            height: 25.0 / 20.0,
                           ),
                           formatButtonVisible: false,
                           titleCentered: true,

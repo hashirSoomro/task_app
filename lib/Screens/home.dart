@@ -97,7 +97,7 @@ class _HomeState extends State<Home> {
                         right: 35.0,
                       ),
                       height: 140,
-                      width: 260,
+                      width: MediaQuery.of(context).size.width * 0.88,
                       decoration: BoxDecoration(
                         color: containerColor, // Purple color
                         borderRadius:
@@ -197,7 +197,8 @@ class _HomeState extends State<Home> {
                                       height: 10,
                                     ),
                                     SizedBox(
-                                      width: 108,
+                                      width: MediaQuery.of(context).size.width *
+                                          0.3,
                                       height: 5.0,
                                       child: ClipRRect(
                                         borderRadius: BorderRadius.circular(

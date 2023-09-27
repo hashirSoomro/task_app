@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_app/Screens/projects.dart';
 
 import 'addButton.dart';
 
@@ -43,12 +44,13 @@ class _BottomBarState extends State<BottomBar> {
           ),
           InkWell(
             onTap: () {
-              setState(() {
-                folderIconColor = Color(0xFF756EF3);
-                homeIconColor = Color(0xFF848A94);
-                chatIconColor = Color(0xFF848A94);
-                profileIconColor = Color(0xFF848A94);
-              });
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Projects()));
+
+              folderIconColor = Color(0xFF756EF3);
+              homeIconColor = Color(0xFF848A94);
+              chatIconColor = Color(0xFF848A94);
+              profileIconColor = Color(0xFF848A94);
             },
             child: CircleAvatar(
               radius: 26,

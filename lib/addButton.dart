@@ -1,6 +1,7 @@
 import "dart:ui";
 import "package:flutter/material.dart";
 import "package:google_fonts/google_fonts.dart";
+import "package:task_app/Screens/addTask.dart";
 
 class AddButton extends StatefulWidget {
   const AddButton({super.key});
@@ -37,7 +38,12 @@ class _AddButtonState extends State<AddButton> {
                           Image.asset("assets/icons/Rectangle.png",
                               color: Color(0xFFE9F1FF)),
                           InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => AddTask()));
+                            },
                             child: AddButtonContainer(
                                 icon: "assets/icons/EditSquare.png",
                                 text: "Create Task"),

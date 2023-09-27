@@ -3,17 +3,33 @@ import 'package:google_fonts/google_fonts.dart';
 import '../gradientButton.dart';
 import 'onboard.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final Color customPrimaryColor =
+      Color(0xFF756EF3); // Replace with your hex code
+
+  // Create a custom primary swatch
+  MaterialColor get customPrimarySwatch =>
+      MaterialColor(customPrimaryColor.value, <int, Color>{
+        50: customPrimaryColor.withOpacity(0.1),
+        100: customPrimaryColor.withOpacity(0.2),
+        200: customPrimaryColor.withOpacity(0.3),
+        300: customPrimaryColor.withOpacity(0.4),
+        400: customPrimaryColor.withOpacity(0.5),
+        500: customPrimaryColor.withOpacity(0.6),
+        600: customPrimaryColor.withOpacity(0.7),
+        700: customPrimaryColor.withOpacity(0.8),
+        800: customPrimaryColor.withOpacity(0.9),
+        900: customPrimaryColor.withOpacity(1.0),
+      });
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Task Manager App',
       theme: ThemeData(
-        primarySwatch: Colors.purple,
+        primarySwatch: customPrimarySwatch,
       ),
       home: const MyHomePage(),
       debugShowCheckedModeBanner: false,
