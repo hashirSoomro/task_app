@@ -1,8 +1,11 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import 'addButton.dart';
+import 'package:task_app/Screens/todayTask.dart';
+import '../TitleAppBar.dart';
+import '../bottomBar.dart';
+import '../circleIcon.dart';
+import '../headings.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -23,68 +26,21 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
-          child: Text(
-            "Friday, 26",
-            style: GoogleFonts.poppins(
-              textStyle: TextStyle(
-                fontSize: 19,
-                fontWeight: FontWeight.w500,
-                color: Color(0xFF002055),
-                height: 1.2,
-              ),
-            ),
-          ),
+        title: TitleAppBar(
+          titleText: "Friday, 26",
         ),
         actions: [
-          Container(
-            margin: EdgeInsets.all(7),
-            width: 42.0,
-            height: 42.0,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              border: Border.all(
-                color: Color.fromARGB(255, 218, 222, 228),
-                width: 1.0,
-              ),
-            ),
-            child: CircleAvatar(
-              backgroundColor: Colors.transparent,
-              radius: 1.0,
-              child: IconButton(
-                onPressed: () {},
-                icon: ImageIcon(
-                  AssetImage('assets/icons/Notifications.png'),
-                  size: 16,
-                ),
-                color: Color(0xFF002055),
-              ),
-            ),
-          ),
+          CircleIcon(
+            img: 'assets/icons/Notifications.png',
+            onPressed: () {},
+          )
         ],
-        leading: Container(
-          margin: EdgeInsets.all(7),
-          width: 42.0,
-          height: 42.0,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            border: Border.all(
-              color: Color.fromARGB(255, 218, 222, 228),
-              width: 1.0,
-            ),
-          ),
-          child: CircleAvatar(
-            backgroundColor: Colors.transparent,
-            radius: 1.0,
-            child: IconButton(
-              onPressed: () {},
-              icon: ImageIcon(
-                AssetImage('assets/icons/Category.png'),
-                size: 16,
-              ),
-              color: Color(0xFF002055),
-            ),
-          ),
+        leading: CircleIcon(
+          img: 'assets/icons/Category.png',
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => TodayTask()));
+          },
         ),
         backgroundColor: Colors.transparent,
         foregroundColor: Color(0xFF002055),
@@ -94,19 +50,8 @@ class _HomeState extends State<Home> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.only(left: 30, top: 20),
-            child: Text(
-              "Let's make a\nhabit together",
-              style: GoogleFonts.poppins(
-                textStyle: const TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.w600,
-                  color: Color(0xFF002055),
-                  height: 1.2,
-                ),
-              ),
-            ),
-          ),
+              padding: const EdgeInsets.only(left: 30, top: 20),
+              child: HeadingText(headingText: "Let's make a\nhabit together")),
           SizedBox(
             height: 25,
           ),
@@ -114,18 +59,17 @@ class _HomeState extends State<Home> {
             height: 140.0,
             width: MediaQuery.of(context).size.width,
             child: CarouselSlider.builder(
-              itemCount: 10, // Adjust the number of containers as needed
+              itemCount: 10,
               options: CarouselOptions(
                   onPageChanged: (index, reason) {
                     setState(() {
                       _currentPage = index;
                     });
                   },
-                  aspectRatio: 2.2, // Adjust the aspect ratio as needed
+                  aspectRatio: 2.2,
                   enlargeCenterPage: false,
                   viewportFraction: 79 / 100),
               itemBuilder: (context, index, realIndex) {
-                // Calculate the container's color
                 Color containerColor =
                     (index == _currentPage) ? Color(0xFF756EF3) : Colors.white;
                 Color textColorMain = (index == _currentPage)
@@ -322,8 +266,8 @@ class _HomeState extends State<Home> {
                 behavior:
                     ScrollConfiguration.of(context).copyWith(scrollbars: false),
                 child: ListView.builder(
-                  physics: NeverScrollableScrollPhysics(),
-                  itemCount: 3, // Adjust the number of containers as needed
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: 3,
                   itemBuilder: (context, index) {
                     return Padding(
                       padding: EdgeInsets.only(left: 24, right: 24, bottom: 13),
@@ -334,9 +278,7 @@ class _HomeState extends State<Home> {
                             borderRadius: BorderRadius.circular(14),
                             shape: BoxShape.rectangle,
                             border: Border.all(
-                                color: Color.fromARGB(255, 218, 230, 250))
-                            // Change the color as desired
-                            ),
+                                color: Color.fromARGB(255, 218, 230, 250))),
                         child: Padding(
                           padding: const EdgeInsets.all(15.0),
                           child: Row(
@@ -414,112 +356,9 @@ class _HomeState extends State<Home> {
               ),
             ),
           ),
-          BottomBar()
         ],
       ),
-    );
-  }
-}
-
-class BottomBar extends StatefulWidget {
-  const BottomBar({super.key});
-
-  @override
-  State<BottomBar> createState() => _BottomBarState();
-}
-
-class _BottomBarState extends State<BottomBar> {
-  Color homeIconColor = Color(0xFF848A94);
-  Color folderIconColor = Color(0xFF848A94);
-  Color chatIconColor = Color(0xFF848A94);
-  Color profileIconColor = Color(0xFF848A94);
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding:
-          const EdgeInsets.only(left: 13.0, right: 13.0, top: 8.0, bottom: 8.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          InkWell(
-            onTap: () {
-              setState(() {
-                folderIconColor = Color(0xFF848A94);
-                homeIconColor = Color(0xFF756EF3);
-                chatIconColor = Color(0xFF848A94);
-                profileIconColor = Color(0xFF848A94);
-              });
-            },
-            child: CircleAvatar(
-              radius: 26,
-              backgroundColor: Colors.transparent,
-              child: ImageIcon(
-                AssetImage('assets/icons/Home.png'),
-                size: 24,
-                color: homeIconColor,
-              ),
-            ),
-          ),
-          InkWell(
-            onTap: () {
-              setState(() {
-                folderIconColor = Color(0xFF756EF3);
-                homeIconColor = Color(0xFF848A94);
-                chatIconColor = Color(0xFF848A94);
-                profileIconColor = Color(0xFF848A94);
-              });
-            },
-            child: CircleAvatar(
-              radius: 26,
-              backgroundColor: Colors.transparent,
-              child: ImageIcon(
-                AssetImage('assets/icons/Folder.png'),
-                size: 24,
-                color: folderIconColor,
-              ),
-            ),
-          ),
-          AddButton(),
-          InkWell(
-            onTap: () {
-              setState(() {
-                folderIconColor = Color(0xFF848A94);
-                homeIconColor = Color(0xFF848A94);
-                chatIconColor = Color(0xFF756EF3);
-                profileIconColor = Color(0xFF848A94);
-              });
-            },
-            child: CircleAvatar(
-              radius: 26,
-              backgroundColor: Colors.transparent,
-              child: ImageIcon(
-                AssetImage('assets/icons/Chat.png'),
-                size: 24,
-                color: chatIconColor,
-              ),
-            ),
-          ),
-          InkWell(
-            onTap: () {
-              setState(() {
-                folderIconColor = Color(0xFF848A94);
-                homeIconColor = Color(0xFF848A94);
-                chatIconColor = Color(0xFF848A94);
-                profileIconColor = Color(0xFF756EF3);
-              });
-            },
-            child: CircleAvatar(
-              radius: 26,
-              backgroundColor: Colors.transparent,
-              child: ImageIcon(
-                AssetImage('assets/icons/Profile.png'),
-                size: 24,
-                color: profileIconColor,
-              ),
-            ),
-          )
-        ],
-      ),
+      bottomNavigationBar: BottomBar(),
     );
   }
 }

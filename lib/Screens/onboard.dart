@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:task_app/signin.dart';
+import 'package:task_app/Screens/signin.dart';
 
 class Onboard extends StatefulWidget {
   const Onboard({super.key});

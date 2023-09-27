@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'gradientButton.dart';
+import '../gradientButton.dart';
 import 'onboard.dart';
 
 void main() => runApp(const MyApp());
