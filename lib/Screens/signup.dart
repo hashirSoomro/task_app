@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:task_app/Screens/signin.dart';
 
+import '../AppTextField.dart';
 import '../TitleAppBar.dart';
 import '../circleIcon.dart';
 import '../gradientButton.dart';
@@ -46,112 +47,18 @@ class _SignUpState extends State<SignUp> {
               SizedBox(
                 height: 40,
               ),
-              TextField(
-                  cursorColor: Color(0xFF756EF3),
-                  decoration: InputDecoration(
-                    hintText: 'Enter your name',
-                    hintStyle: GoogleFonts.poppins(
-                      textStyle: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w400,
-                        color: Color(0xFF868D95),
-                        height: 1.3,
-                      ),
-                      decorationColor: Color(0xFF756EF3),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20),
-                        borderSide: BorderSide(
-                            color: Color.fromARGB(255, 202, 209, 221))),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      borderSide: BorderSide(
-                        color: Color(0xFF756EF3),
-                      ),
-                    ),
-                  ),
-                  style: GoogleFonts.poppins(
-                    textStyle: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                      color: Color(0xFF002055),
-                      height: 1.3,
-                    ),
-                    decorationColor: Color(0xFF756EF3),
-                  )),
+              AppTextField(
+                hintText: "Enter your name",
+                obscureText: false,
+              ),
               SizedBox(
                 height: 30,
               ),
-              TextField(
-                  cursorColor: Color(0xFF756EF3),
-                  decoration: InputDecoration(
-                    hintText: 'Enter your email',
-                    hintStyle: GoogleFonts.poppins(
-                      textStyle: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w400,
-                        color: Color(0xFF868D95),
-                        height: 1.3,
-                      ),
-                      decorationColor: Color(0xFF756EF3),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20),
-                        borderSide: BorderSide(
-                            color: Color.fromARGB(255, 202, 209, 221))),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      borderSide: BorderSide(
-                        color: Color(0xFF756EF3),
-                      ),
-                    ),
-                  ),
-                  style: GoogleFonts.poppins(
-                    textStyle: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                      color: Color(0xFF002055),
-                      height: 1.3,
-                    ),
-                    decorationColor: Color(0xFF756EF3),
-                  )),
+              AppTextField(hintText: "Enter your email", obscureText: false),
               SizedBox(
                 height: 30,
               ),
-              TextField(
-                  obscureText: true,
-                  cursorColor: Color(0xFF756EF3),
-                  decoration: InputDecoration(
-                    hintText: 'Enter your password',
-                    hintStyle: GoogleFonts.poppins(
-                      textStyle: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w400,
-                        color: Color(0xFF868D95),
-                        height: 1.3,
-                      ),
-                      decorationColor: Color(0xFF756EF3),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20),
-                        borderSide: BorderSide(
-                            color: Color.fromARGB(255, 202, 209, 221))),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      borderSide: BorderSide(
-                        color: Color(0xFF756EF3),
-                      ),
-                    ),
-                  ),
-                  style: GoogleFonts.poppins(
-                    textStyle: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                      color: Color(0xFF002055),
-                      height: 1.3,
-                    ),
-                    decorationColor: Color(0xFF756EF3),
-                  )),
+              AppTextField(hintText: "Enter your password", obscureText: true),
               const SizedBox(
                 height: 34,
               ),
