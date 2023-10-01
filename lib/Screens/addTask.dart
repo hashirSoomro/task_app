@@ -4,6 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import '../AppTextField.dart';
 import '../TitleAppBar.dart';
 import '../circleIcon.dart';
+import '../gradientButton.dart';
+import '../tabWidget.dart';
 import '../textFieldCalendar.dart';
 import '../textFieldTime.dart';
 
@@ -110,7 +112,7 @@ class _AddTaskState extends State<AddTask> {
         shadowColor: Colors.transparent,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.only(left: 16.0, right: 16.0, top: 20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -254,7 +256,7 @@ class _AddTaskState extends State<AddTask> {
               ],
             ),
             SizedBox(
-              height: 10,
+              height: 15,
             ),
             Text(
               "Board",
@@ -264,6 +266,32 @@ class _AddTaskState extends State<AddTask> {
                   fontWeight: FontWeight.w400,
                   color: Color(0xFF868D95),
                 ),
+              ),
+            ),
+            SizedBox(
+              height: 5,
+            ),
+            TabWidget(
+              first: "Urgent",
+              second: "Running",
+              third: "Ongoing",
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Center(
+              child: GradientButton(
+                onPressed: () {},
+                child: Text(
+                  'Save',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                  ),
+                ),
+                gradientColors: [Color(0xFF756EF3), Color(0xFF756EF3)],
+                width: MediaQuery.of(context).size.width * 0.70,
+                height: 60.0,
               ),
             ),
           ],
