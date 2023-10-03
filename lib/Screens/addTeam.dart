@@ -1,28 +1,38 @@
 import 'package:flutter/material.dart';
+import 'dart:io';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../AppTextField.dart';
 import '../TitleAppBar.dart';
 import '../circleIcon.dart';
 import '../gradientButton.dart';
 import '../tabWidget.dart';
-import '../textFieldCalendar.dart';
-import '../textFieldTime.dart';
+import 'addTask.dart';
 
-class TeamMember {
-  final String name;
-  final String imageUrl;
-  bool isSelected;
+class AddTeam extends StatefulWidget {
+  const AddTeam({super.key});
 
-  TeamMember(this.name, this.imageUrl, {this.isSelected = false});
-}
-
-class AddTask extends StatefulWidget {
   @override
-  State<AddTask> createState() => _AddTaskState();
+  State<AddTeam> createState() => _AddTeamState();
 }
 
-class _AddTaskState extends State<AddTask> {
+class _AddTeamState extends State<AddTeam> {
+  File? _imageFile;
+  final picker = ImagePicker();
+
+  Future<void> _getImageFromGallery() async {
+    final pickedFile = await picker.pickImage(source: ImageSource.gallery);
+
+    setState(() {
+      if (pickedFile != null) {
+        _imageFile = File(pickedFile.path);
+      } else {
+        print('No image selected.');
+      }
+    });
+  }
+
   List<TeamMember> selectedMembers = [];
   List<TeamMember> availableMembers = [
     TeamMember("Hashir", "assets/images/photo.jpg"),
@@ -100,7 +110,7 @@ class _AddTaskState extends State<AddTask> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: TitleAppBar(titleText: "Add Task"),
+        title: TitleAppBar(titleText: "Create Team"),
         leading: CircleIcon(
           img: "assets/icons/Stroke.png",
           onPressed: () {
@@ -116,8 +126,61 @@ class _AddTaskState extends State<AddTask> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Center(
+              child: Column(
+                children: [
+                  GestureDetector(
+                    onTap: _getImageFromGallery,
+                    child: Container(
+                      width: 84,
+                      height: 84,
+                      decoration: BoxDecoration(
+                          color: Colors.transparent,
+                          borderRadius: BorderRadius.circular(75),
+                          border: Border.all(color: Color(0xFF756EF3))),
+                      child: _imageFile == null
+                          ? ImageIcon(
+                              AssetImage("assets/images/logo.png"),
+                              size: 40,
+                              color: Color(0xFF756EF3),
+                            )
+                          : ClipRRect(
+                              borderRadius: BorderRadius.circular(75),
+                              child: Image.file(_imageFile!,
+                                  width: 83, height: 83, fit: BoxFit.fill),
+                            ),
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  Text(
+                    "Upload logo file",
+                    style: GoogleFonts.poppins(
+                      textStyle: const TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xFF002055),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  Text(
+                    "Your logo will publish always",
+                    style: GoogleFonts.poppins(
+                      textStyle: const TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w400,
+                        color: Color(0xFF868D95),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
             Text(
-              "Task Name",
+              "Team Name",
               style: GoogleFonts.poppins(
                 textStyle: const TextStyle(
                   fontSize: 14,
@@ -126,8 +189,10 @@ class _AddTaskState extends State<AddTask> {
                 ),
               ),
             ),
-            AppTextField(hintText: "Enter task name", obscureText: false),
-            SizedBox(height: 16),
+            AppTextField(hintText: "Enter team name", obscureText: false),
+            SizedBox(
+              height: 15,
+            ),
             Text(
               "Team Members",
               style: GoogleFonts.poppins(
@@ -197,69 +262,11 @@ class _AddTaskState extends State<AddTask> {
                 ),
               ],
             ),
-            Text(
-              "Date",
-              style: GoogleFonts.poppins(
-                textStyle: const TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                  color: Color(0xFF868D95),
-                ),
-              ),
-            ),
-            TextFieldCalendar(),
             SizedBox(
-              height: 15,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Start Time",
-                        style: GoogleFonts.poppins(
-                          textStyle: const TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w400,
-                            color: Color(0xFF868D95),
-                          ),
-                        ),
-                      ),
-                      TimeSelectionTextField(),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "End Time",
-                        style: GoogleFonts.poppins(
-                          textStyle: const TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w400,
-                            color: Color(0xFF868D95),
-                          ),
-                        ),
-                      ),
-                      TimeSelectionTextField()
-                    ],
-                  ),
-                )
-              ],
-            ),
-            SizedBox(
-              height: 15,
+              height: 5,
             ),
             Text(
-              "Board",
+              "Type",
               style: GoogleFonts.poppins(
                 textStyle: const TextStyle(
                   fontSize: 14,
@@ -272,18 +279,18 @@ class _AddTaskState extends State<AddTask> {
               height: 5,
             ),
             TabWidget(
-              first: "Urgent",
-              second: "Running",
-              third: "Ongoing",
+              first: "Private",
+              second: "Public",
+              third: "Secret",
             ),
             SizedBox(
-              height: 20,
+              height: 30,
             ),
             Center(
               child: GradientButton(
                 onPressed: () {},
                 child: Text(
-                  'Save',
+                  'Create Team',
                   style: TextStyle(
                     fontSize: 20,
                     color: Colors.white,

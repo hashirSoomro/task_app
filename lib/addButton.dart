@@ -2,6 +2,9 @@ import "dart:ui";
 import "package:flutter/material.dart";
 import "package:google_fonts/google_fonts.dart";
 import "package:task_app/Screens/addTask.dart";
+import "package:task_app/Screens/addTeam.dart";
+import 'package:image_picker/image_picker.dart';
+import 'dart:io';
 
 class AddButton extends StatefulWidget {
   const AddButton({super.key});
@@ -55,7 +58,12 @@ class _AddButtonState extends State<AddButton> {
                                 text: "Create Project"),
                           ),
                           InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => AddTeam()));
+                            },
                             child: AddButtonContainer(
                                 icon: "assets/icons/Users.png",
                                 text: "Create Team"),

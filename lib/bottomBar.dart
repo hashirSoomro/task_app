@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_app/Screens/chat.dart';
 import 'package:task_app/Screens/projects.dart';
 
 import 'addButton.dart';
@@ -65,6 +66,8 @@ class _BottomBarState extends State<BottomBar> {
           AddButton(),
           InkWell(
             onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Chat()));
               setState(() {
                 folderIconColor = Color(0xFF848A94);
                 homeIconColor = Color(0xFF848A94);
