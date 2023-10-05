@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:task_app/Screens/taskStatus.dart';
 import 'package:task_app/TitleAppBar.dart';
 import 'package:task_app/bottomBar.dart';
 import 'package:task_app/circleIcon.dart';
@@ -33,7 +34,14 @@ class _ChatState extends State<Chat> {
     return Scaffold(
       appBar: AppBar(
         title: TitleAppBar(titleText: "Chat"),
-        actions: [CircleIcon(img: "assets/icons/Add.png", onPressed: () {})],
+        actions: [
+          CircleIcon(
+              img: "assets/icons/Add.png",
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: ((context) => TaskStatus())));
+              })
+        ],
         leading: CircleIcon(
             img: "assets/icons/Stroke.png",
             onPressed: () {
