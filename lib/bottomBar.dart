@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:task_app/Screens/chat.dart';
 import 'package:task_app/Screens/projects.dart';
 
+import 'Screens/Profile.dart';
+import 'Screens/home.dart';
 import 'addButton.dart';
 
 class BottomBar extends StatefulWidget {
@@ -26,6 +28,8 @@ class _BottomBarState extends State<BottomBar> {
         children: [
           InkWell(
             onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Home()));
               setState(() {
                 folderIconColor = Color(0xFF848A94);
                 homeIconColor = Color(0xFF756EF3);
@@ -87,6 +91,8 @@ class _BottomBarState extends State<BottomBar> {
           ),
           InkWell(
             onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Profile()));
               setState(() {
                 folderIconColor = Color(0xFF848A94);
                 homeIconColor = Color(0xFF848A94);

@@ -16,6 +16,10 @@ class _AddButtonState extends State<AddButton> {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
+      shape: RoundedRectangleBorder(
+        borderRadius:
+            BorderRadius.circular(75), // Half of the button's width/height
+      ),
       minWidth: 70,
       onPressed: () {
         showModalBottomSheet(
