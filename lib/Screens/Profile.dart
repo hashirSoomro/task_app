@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:task_app/Screens/editProfile.dart';
 import 'package:task_app/bottomBar.dart';
 
 import '../TitleAppBar.dart';
@@ -105,7 +106,12 @@ class _ProfileState extends State<Profile> {
                         ),
                         InkWell(
                           borderRadius: BorderRadius.circular(8),
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: ((context) => EditProfile())));
+                          },
                           child: Container(
                             height: 28,
                             width: 54,
