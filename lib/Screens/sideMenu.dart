@@ -5,6 +5,7 @@ import 'dart:io';
 
 import '../TitleAppBar.dart';
 import '../circleIcon.dart';
+import '../gradientButton.dart';
 import 'Profile.dart';
 
 class SideMenu extends StatefulWidget {
@@ -170,12 +171,7 @@ class _SideMenuState extends State<SideMenu> {
                             ),
                             InkWell(
                               borderRadius: BorderRadius.circular(8),
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: ((context) => Profile())));
-                              },
+                              onTap: () {},
                               child: Container(
                                 height: 28,
                                 width: 60,
@@ -201,6 +197,9 @@ class _SideMenuState extends State<SideMenu> {
                         ),
                       ),
                     ),
+                    SizedBox(
+                      height: 15,
+                    ),
                     Text(
                       "Manage",
                       style: GoogleFonts.poppins(
@@ -215,44 +214,39 @@ class _SideMenuState extends State<SideMenu> {
                       height: 10,
                     ),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Container(
-                          height: 64,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(16),
-                            border: Border.all(color: Color(0xFFE9F1FF)),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.only(
-                                top: 8, bottom: 8, left: 16, right: 16),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  "Team",
-                                  style: GoogleFonts.poppins(
-                                    textStyle: const TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w500,
-                                      color: Color(0xFF002055),
+                        Expanded(
+                          child: Container(
+                            height: 64,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(16),
+                              border: Border.all(color: Color(0xFFE9F1FF)),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.only(
+                                  top: 8, bottom: 8, left: 16, right: 16),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    "Team",
+                                    style: GoogleFonts.poppins(
+                                      textStyle: const TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w500,
+                                        color: Color(0xFF002055),
+                                      ),
                                     ),
                                   ),
-                                ),
-                                InkWell(
-                                  borderRadius: BorderRadius.circular(8),
-                                  onTap: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: ((context) => Profile())));
-                                  },
-                                  child: Container(
+                                  Container(
                                     height: 28,
                                     width: 40,
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(8),
                                         border: Border.all(
-                                            color: Color(0xFF756EF3))),
+                                            color: Color(0xFFE9F1FF))),
                                     child: Center(
                                       child: Text(
                                         "8",
@@ -266,48 +260,45 @@ class _SideMenuState extends State<SideMenu> {
                                       ),
                                     ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         ),
-                        Container(
-                          height: 64,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(16),
-                            border: Border.all(color: Color(0xFFE9F1FF)),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.only(
-                                top: 8, bottom: 8, left: 16, right: 16),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  "Labels",
-                                  style: GoogleFonts.poppins(
-                                    textStyle: const TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w500,
-                                      color: Color(0xFF002055),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Expanded(
+                          child: Container(
+                            height: 64,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(16),
+                              border: Border.all(color: Color(0xFFE9F1FF)),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.only(
+                                  top: 8, bottom: 8, left: 16, right: 16),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    "Labels",
+                                    style: GoogleFonts.poppins(
+                                      textStyle: const TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w500,
+                                        color: Color(0xFF002055),
+                                      ),
                                     ),
                                   ),
-                                ),
-                                InkWell(
-                                  borderRadius: BorderRadius.circular(8),
-                                  onTap: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: ((context) => Profile())));
-                                  },
-                                  child: Container(
+                                  Container(
                                     height: 28,
                                     width: 40,
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(8),
                                         border: Border.all(
-                                            color: Color(0xFF756EF3))),
+                                            color: Color(0xFFE9F1FF))),
                                     child: Center(
                                       child: Text(
                                         "13",
@@ -321,13 +312,141 @@ class _SideMenuState extends State<SideMenu> {
                                       ),
                                     ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         )
                       ],
-                    )
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Expanded(
+                          child: Container(
+                            height: 64,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(16),
+                              border: Border.all(color: Color(0xFFE9F1FF)),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.only(
+                                  top: 8, bottom: 8, left: 16, right: 16),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    "Task",
+                                    style: GoogleFonts.poppins(
+                                      textStyle: const TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w500,
+                                        color: Color(0xFF002055),
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    height: 28,
+                                    width: 40,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(8),
+                                        border: Border.all(
+                                            color: Color(0xFFE9F1FF))),
+                                    child: Center(
+                                      child: Text(
+                                        "20",
+                                        style: GoogleFonts.poppins(
+                                          textStyle: const TextStyle(
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.w400,
+                                            color: Color(0xFF002055),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Expanded(
+                          child: Container(
+                            height: 64,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(16),
+                              border: Border.all(color: Color(0xFFE9F1FF)),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.only(
+                                  top: 8, bottom: 8, left: 16, right: 16),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    "Member",
+                                    style: GoogleFonts.poppins(
+                                      textStyle: const TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w500,
+                                        color: Color(0xFF002055),
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    height: 28,
+                                    width: 40,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(8),
+                                        border: Border.all(
+                                            color: Color(0xFFE9F1FF))),
+                                    child: Center(
+                                      child: Text(
+                                        "11",
+                                        style: GoogleFonts.poppins(
+                                          textStyle: const TextStyle(
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.w400,
+                                            color: Color(0xFF002055),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: 25,
+                    ),
+                    Center(
+                      child: GradientButton(
+                        onPressed: () {},
+                        child: Text(
+                          'Log Out',
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
+                          ),
+                        ),
+                        gradientColors: [Color(0xFF756EF3), Color(0xFF756EF3)],
+                        width: MediaQuery.of(context).size.width *
+                            0.85, // Set the width
+                        height: 60.0, // Set the height
+                      ),
+                    ),
                   ]))
         ]));
   }
