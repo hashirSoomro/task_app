@@ -16,9 +16,9 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
+  List headings = ["My Projects", "Join a Team", "Settings", "My Task"];
   File? _imageFile;
   final picker = ImagePicker();
-  List headings = ["My Projects", "Join a Team", "Settings", "My Task"];
 
   Future<void> _getImageFromGallery() async {
     final pickedFile = await picker.pickImage(source: ImageSource.gallery);

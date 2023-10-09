@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:task_app/Screens/sideMenu.dart';
 import 'package:task_app/Screens/todayTask.dart';
 import '../TitleAppBar.dart';
 import '../bottomBar.dart';
@@ -32,14 +33,17 @@ class _HomeState extends State<Home> {
         actions: [
           CircleIcon(
             img: 'assets/icons/Notifications.png',
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => TodayTask()));
+            },
           )
         ],
         leading: CircleIcon(
           img: 'assets/icons/Category.png',
           onPressed: () {
             Navigator.push(
-                context, MaterialPageRoute(builder: (context) => TodayTask()));
+                context, MaterialPageRoute(builder: (context) => SideMenu()));
           },
         ),
         backgroundColor: Colors.transparent,
