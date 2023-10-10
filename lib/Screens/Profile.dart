@@ -7,6 +7,7 @@ import 'package:task_app/bottomBar.dart';
 
 import '../TitleAppBar.dart';
 import '../circleIcon.dart';
+import 'settings.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -220,7 +221,13 @@ class _ProfileState extends State<Profile> {
                       padding:
                           const EdgeInsets.only(top: 8.0, right: 16, left: 16),
                       child: GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => Settings(),
+                              ));
+                        },
                         child: Container(
                           width: 327,
                           height: 56,
