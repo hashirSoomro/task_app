@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../TitleAppBar.dart';
 import '../circleIcon.dart';
+import 'languages.dart';
 
 class Settings extends StatefulWidget {
   const Settings({super.key});
@@ -335,6 +336,42 @@ class _SettingsState extends State<Settings> {
                                 });
                               },
                             )
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  InkWell(
+                    borderRadius: BorderRadius.circular(16),
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Languages()));
+                    },
+                    child: Container(
+                      height: 64,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        border: Border.all(color: Color(0xFFE9F1FF)),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                            top: 8, bottom: 8, left: 16, right: 16),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Languages",
+                              style: GoogleFonts.poppins(
+                                textStyle: const TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w500,
+                                  color: Color(0xFF002055),
+                                ),
+                              ),
+                            ),
                           ],
                         ),
                       ),
