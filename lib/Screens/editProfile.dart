@@ -37,7 +37,7 @@ class _EditProfileState extends State<EditProfile> {
         appBar: AppBar(
           title: TitleAppBar(titleText: "Edit Profile"),
           actions: [
-            Container(
+            SizedBox(
               height: 30,
               width: 65,
               child: Center(
@@ -63,7 +63,7 @@ class _EditProfileState extends State<EditProfile> {
                 Navigator.pop(context);
               }),
           backgroundColor: Colors.transparent,
-          foregroundColor: Color(0xFF002055),
+          foregroundColor: const Color(0xFF002055),
           shadowColor: Colors.transparent,
         ),
         body: Column(children: [
@@ -98,7 +98,7 @@ class _EditProfileState extends State<EditProfile> {
                         ),
                       ),
                     ])),
-                    SizedBox(height: 25),
+                    const SizedBox(height: 25),
                     Text(
                       "Name",
                       style: GoogleFonts.poppins(
@@ -110,7 +110,7 @@ class _EditProfileState extends State<EditProfile> {
                       ),
                     ),
                     AppTextField(hintText: "Enter name", obscureText: false),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     Text(
                       "Email",
                       style: GoogleFonts.poppins(
@@ -122,7 +122,7 @@ class _EditProfileState extends State<EditProfile> {
                       ),
                     ),
                     AppTextField(hintText: "Enter email", obscureText: false),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     Text(
                       "Username",
                       style: GoogleFonts.poppins(
@@ -135,7 +135,7 @@ class _EditProfileState extends State<EditProfile> {
                     ),
                     AppTextField(
                         hintText: "Enter username", obscureText: false),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     Text(
                       "Phone Number",
                       style: GoogleFonts.poppins(
@@ -148,7 +148,7 @@ class _EditProfileState extends State<EditProfile> {
                     ),
                     AppTextField(
                         hintText: "Enter phone number", obscureText: false),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                   ]))
         ]));
   }

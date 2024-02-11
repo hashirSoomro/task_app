@@ -7,6 +7,8 @@ import '../TitleAppBar.dart';
 import '../circleIcon.dart';
 
 class DoughnutChart extends StatelessWidget {
+  const DoughnutChart({super.key});
+
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
@@ -18,15 +20,15 @@ class DoughnutChart extends StatelessWidget {
           pieTouchData: PieTouchData(),
           sections: [
             PieChartSectionData(
-              color: Color(0xFF756EF3),
+              color: const Color(0xFF756EF3),
               radius: 30,
             ),
             PieChartSectionData(
-              color: Color(0xFFB1D199),
+              color: const Color(0xFFB1D199),
               radius: 30, // Adjust the radius as needed
             ),
             PieChartSectionData(
-              color: Color(0xFFFFB35A),
+              color: const Color(0xFFFFB35A),
               radius: 30, // Adjust the radius as needed
             ),
           ],
@@ -37,6 +39,8 @@ class DoughnutChart extends StatelessWidget {
 }
 
 class TaskStatus extends StatefulWidget {
+  const TaskStatus({super.key});
+
   @override
   State<TaskStatus> createState() => _TaskStatusState();
 }
@@ -57,7 +61,7 @@ class _TaskStatusState extends State<TaskStatus> {
               Navigator.pop(context);
             }),
         backgroundColor: Colors.transparent,
-        foregroundColor: Color(0xFF002055),
+        foregroundColor: const Color(0xFF002055),
         shadowColor: Colors.transparent,
       ),
       body: Padding(
@@ -67,11 +71,11 @@ class _TaskStatusState extends State<TaskStatus> {
           children: [
             Stack(
               children: [
-                DoughnutChart(),
+                const DoughnutChart(),
                 Center(
                     child: Column(
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       height: 82,
                     ),
                     Text(
@@ -108,10 +112,10 @@ class _TaskStatusState extends State<TaskStatus> {
                       Container(
                         height: 8,
                         width: 8,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                             color: Color(0xFFB1D199), shape: BoxShape.circle),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 7,
                       ),
                       Text(
@@ -131,10 +135,10 @@ class _TaskStatusState extends State<TaskStatus> {
                       Container(
                         height: 8,
                         width: 8,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                             color: Color(0xFFFFB35A), shape: BoxShape.circle),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 7,
                       ),
                       Text(
@@ -154,10 +158,10 @@ class _TaskStatusState extends State<TaskStatus> {
                       Container(
                         height: 8,
                         width: 8,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                             color: Color(0xFF756EF3), shape: BoxShape.circle),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 7,
                       ),
                       Text(
@@ -186,7 +190,7 @@ class _TaskStatusState extends State<TaskStatus> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             Expanded(
@@ -201,11 +205,11 @@ class _TaskStatusState extends State<TaskStatus> {
                       child: Container(
                         height: 70,
                         width: 327,
-                        margin: EdgeInsets.only(top: 10, bottom: 10),
+                        margin: const EdgeInsets.only(top: 10, bottom: 10),
                         decoration: BoxDecoration(
                             color: Colors.transparent,
                             borderRadius: BorderRadius.circular(10),
-                            border: Border.all(color: Color(0xFFE9F1FF))),
+                            border: Border.all(color: const Color(0xFFE9F1FF))),
                         child: Padding(
                           padding: const EdgeInsets.only(
                               left: 16.0, right: 16, bottom: 14, top: 14),
@@ -241,7 +245,7 @@ class _TaskStatusState extends State<TaskStatus> {
                                       Container(
                                         height: 2,
                                         width: 2,
-                                        decoration: BoxDecoration(
+                                        decoration: const BoxDecoration(
                                             color: Color(0xFF848A94),
                                             shape: BoxShape.circle),
                                       ),
@@ -261,7 +265,7 @@ class _TaskStatusState extends State<TaskStatus> {
                               ),
                               InkWell(
                                 onTap: () {},
-                                child: ImageIcon(
+                                child: const ImageIcon(
                                   AssetImage("assets/icons/More.png"),
                                   color: Color(0xFF848A94),
                                 ),
@@ -278,7 +282,7 @@ class _TaskStatusState extends State<TaskStatus> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomBar(),
+      bottomNavigationBar: const BottomBar(),
     );
   }
 }

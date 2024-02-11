@@ -21,16 +21,16 @@ class _ProjectsState extends State<Projects> {
     'assets/images/photo.jpg'
   ];
   final List<Color> ProgressBarColor = [
-    Color(0xFFB0D97F),
-    Color(0xFFFFE1AC),
-    Color(0xFF96C2FF),
-    Color(0xFFB0D97F)
+    const Color(0xFFB0D97F),
+    const Color(0xFFFFE1AC),
+    const Color(0xFF96C2FF),
+    const Color(0xFFB0D97F)
   ];
   final List<Color> ProgressLeftColor = [
-    Color(0xFFECF4E5),
-    Color(0xFFF4F0E4),
-    Color(0xFFE8EDF4),
-    Color(0xFFECF4E5)
+    const Color(0xFFECF4E5),
+    const Color(0xFFF4F0E4),
+    const Color(0xFFE8EDF4),
+    const Color(0xFFECF4E5)
   ];
   List ProjectHeading = [
     "Unity Dashboard",
@@ -64,11 +64,11 @@ class _ProjectsState extends State<Projects> {
           },
         ),
         backgroundColor: Colors.transparent,
-        foregroundColor: Color(0xFF002055),
+        foregroundColor: const Color(0xFF002055),
         shadowColor: Colors.transparent,
       ),
       body: Padding(
-        padding: EdgeInsets.only(top: 20, left: 16, right: 16),
+        padding: const EdgeInsets.only(top: 20, left: 16, right: 16),
         child: Column(
           children: [
             TextField(
@@ -76,7 +76,7 @@ class _ProjectsState extends State<Projects> {
                 hintText: 'Search',
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20),
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: Color.fromARGB(255, 202, 209, 221),
                   ),
                 ),
@@ -87,7 +87,7 @@ class _ProjectsState extends State<Projects> {
                     color: Color(0xFF868D95),
                   ),
                 ),
-                prefixIcon: ImageIcon(AssetImage('assets/icons/Search.png')),
+                prefixIcon: const ImageIcon(AssetImage('assets/icons/Search.png')),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20.0),
                 ),
@@ -100,17 +100,17 @@ class _ProjectsState extends State<Projects> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 25,
             ),
             Row(
               children: [
                 buildTabButton("Favorites", 0),
-                SizedBox(
+                const SizedBox(
                   width: 7,
                 ),
                 buildTabButton("Recent", 1),
-                SizedBox(
+                const SizedBox(
                   width: 7,
                 ),
                 buildTabButton("All", 2),
@@ -124,13 +124,13 @@ class _ProjectsState extends State<Projects> {
                   itemCount: 4,
                   itemBuilder: (context, index) {
                     return Padding(
-                        padding: EdgeInsets.only(top: 10.0),
+                        padding: const EdgeInsets.only(top: 10.0),
                         child: Container(
                             width: 327,
                             height: 93,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(14),
-                                border: Border.all(color: Color(0xFFE9F1FF))),
+                                border: Border.all(color: const Color(0xFFE9F1FF))),
                             child: Padding(
                               padding: const EdgeInsets.only(
                                   top: 8, bottom: 3, left: 16, right: 16),
@@ -144,7 +144,7 @@ class _ProjectsState extends State<Projects> {
                                         Text(
                                           ProjectHeading[index],
                                           style: GoogleFonts.poppins(
-                                            textStyle: TextStyle(
+                                            textStyle: const TextStyle(
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500,
                                               color: Color(0xFF002055),
@@ -163,7 +163,7 @@ class _ProjectsState extends State<Projects> {
                                             child: Text(
                                               "10/20",
                                               style: GoogleFonts.poppins(
-                                                textStyle: TextStyle(
+                                                textStyle: const TextStyle(
                                                   fontSize: 12,
                                                   fontWeight: FontWeight.w400,
                                                   color: Color(0xFF002055),
@@ -177,14 +177,14 @@ class _ProjectsState extends State<Projects> {
                                     Text(
                                       ProjectSubHeading[index],
                                       style: GoogleFonts.poppins(
-                                        textStyle: TextStyle(
+                                        textStyle: const TextStyle(
                                           fontSize: 13,
                                           fontWeight: FontWeight.w400,
                                           color: Color(0xFF848A94),
                                         ),
                                       ),
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 5,
                                     ),
                                     Row(
@@ -215,7 +215,7 @@ class _ProjectsState extends State<Projects> {
                                                   )
                                               ],
                                             ),
-                                            SizedBox(
+                                            const SizedBox(
                                               width: 10,
                                             ),
                                             SizedBox(
@@ -252,7 +252,7 @@ class _ProjectsState extends State<Projects> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomBar(),
+      bottomNavigationBar: const BottomBar(),
     );
   }
 
@@ -263,7 +263,7 @@ class _ProjectsState extends State<Projects> {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
-          color: isSelected ? Color(0xFF756EF3) : Colors.transparent,
+          color: isSelected ? const Color(0xFF756EF3) : Colors.transparent,
         ),
       ),
       child: TextButton(
@@ -278,7 +278,7 @@ class _ProjectsState extends State<Projects> {
             textStyle: TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w500,
-              color: isSelected ? Color(0xFF002055) : Color(0xFF848A94),
+              color: isSelected ? const Color(0xFF002055) : const Color(0xFF848A94),
             ),
           ),
         ),

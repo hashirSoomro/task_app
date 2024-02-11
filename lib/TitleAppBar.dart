@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 class TitleAppBar extends StatefulWidget {
   String titleText;
 
-  TitleAppBar({required this.titleText});
+  TitleAppBar({super.key, required this.titleText});
   @override
   State<TitleAppBar> createState() => _TitleAppBarState();
 }
@@ -16,7 +16,7 @@ class _TitleAppBarState extends State<TitleAppBar> {
       child: Text(
         widget.titleText,
         style: GoogleFonts.poppins(
-          textStyle: TextStyle(
+          textStyle: const TextStyle(
             fontSize: 19,
             fontWeight: FontWeight.w500,
             color: Color(0xFF002055),

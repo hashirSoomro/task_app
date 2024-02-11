@@ -41,11 +41,11 @@ class _TodayTaskState extends State<TodayTask> {
           },
         ),
         backgroundColor: Colors.transparent,
-        foregroundColor: Color(0xFF002055),
+        foregroundColor: const Color(0xFF002055),
         shadowColor: Colors.transparent,
       ),
       body: Container(
-          padding: EdgeInsets.only(top: 10, left: 24, right: 24),
+          padding: const EdgeInsets.only(top: 10, left: 24, right: 24),
           child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
@@ -57,11 +57,11 @@ class _TodayTaskState extends State<TodayTask> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           height: 15,
                         ),
                         HeadingText(headingText: "October, 20"),
-                        SizedBox(
+                        const SizedBox(
                           height: 5,
                         ),
                         SubHeadingText(subHeadingText: "15 task today")
@@ -73,12 +73,12 @@ class _TodayTaskState extends State<TodayTask> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => MonthlyTask()));
+                                  builder: (context) => const MonthlyTask()));
                         })
                   ],
                 ),
-                CalendarWidget(),
-                SizedBox(
+                const CalendarWidget(),
+                const SizedBox(
                   height: 30,
                 ),
                 Expanded(
@@ -87,13 +87,13 @@ class _TodayTaskState extends State<TodayTask> {
                     itemBuilder: ((context, index) {
                       return Stack(
                         children: [
-                          Divider(
+                          const Divider(
                             height: 20,
                             thickness: 0.8,
                             endIndent: 0,
                             color: Color.fromARGB(255, 218, 222, 228),
                           ),
-                          Container(
+                          SizedBox(
                             height: 90,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -102,7 +102,7 @@ class _TodayTaskState extends State<TodayTask> {
                                 Text(
                                   "10 am",
                                   style: GoogleFonts.poppins(
-                                    textStyle: TextStyle(
+                                    textStyle: const TextStyle(
                                       fontSize: 15,
                                       fontWeight: FontWeight.w600,
                                       color: Color(0xFF002055),
@@ -132,7 +132,7 @@ class _TodayTaskState extends State<TodayTask> {
                                     Text(
                                       "Warefare Elements",
                                       style: GoogleFonts.poppins(
-                                        textStyle: TextStyle(
+                                        textStyle: const TextStyle(
                                           fontSize: 14,
                                           fontWeight: FontWeight.w500,
                                           color: Color(0xFFFFFFFF),
@@ -149,7 +149,7 @@ class _TodayTaskState extends State<TodayTask> {
                                             for (int i = 0;
                                                 i < ProfileImages.length;
                                                 i++)
-                                              Align(
+                                              const Align(
                                                 widthFactor: 0.8,
                                                 child: CircleAvatar(
                                                   backgroundColor: Colors.white,
@@ -166,7 +166,7 @@ class _TodayTaskState extends State<TodayTask> {
                                         Text(
                                           "10am-11am",
                                           style: GoogleFonts.poppins(
-                                            textStyle: TextStyle(
+                                            textStyle: const TextStyle(
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500,
                                               color: Color(0xFFFFFFFF),
@@ -176,7 +176,7 @@ class _TodayTaskState extends State<TodayTask> {
                                         ),
                                       ],
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 10,
                                     )
                                   ],
@@ -190,7 +190,7 @@ class _TodayTaskState extends State<TodayTask> {
                   ),
                 ),
               ])),
-      bottomNavigationBar: BottomBar(),
+      bottomNavigationBar: const BottomBar(),
     );
   }
 }

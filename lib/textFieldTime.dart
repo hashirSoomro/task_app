@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:intl/intl.dart';
-import 'package:flutter/services.dart';
 
 class TimeSelectionTextField extends StatefulWidget {
+  const TimeSelectionTextField({super.key});
+
   @override
   _TimeSelectionTextFieldState createState() => _TimeSelectionTextFieldState();
 }
 
 class _TimeSelectionTextFieldState extends State<TimeSelectionTextField> {
-  TextEditingController _timeController = TextEditingController();
+  final TextEditingController _timeController = TextEditingController();
   TimeOfDay? _selectedTime;
 
   Future<void> _showTimePicker(BuildContext context) async {
@@ -34,7 +34,7 @@ class _TimeSelectionTextFieldState extends State<TimeSelectionTextField> {
       onTap: () {
         _showTimePicker(context);
       },
-      cursorColor: Color(0xFF756EF3),
+      cursorColor: const Color(0xFF756EF3),
       decoration: InputDecoration(
         hintText: "Select Time",
         hintStyle: GoogleFonts.poppins(
@@ -46,11 +46,11 @@ class _TimeSelectionTextFieldState extends State<TimeSelectionTextField> {
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20),
-          borderSide: BorderSide(color: Color.fromARGB(255, 202, 209, 221)),
+          borderSide: const BorderSide(color: Color.fromARGB(255, 202, 209, 221)),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20),
-          borderSide: BorderSide(
+          borderSide: const BorderSide(
             color: Color(0xFF756EF3),
           ),
         ),

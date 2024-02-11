@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 class HeadingText extends StatefulWidget {
   String headingText;
-  HeadingText({required this.headingText});
+  HeadingText({super.key, required this.headingText});
 
   @override
   State<HeadingText> createState() => _HeadingTextState();
@@ -29,7 +29,7 @@ class _HeadingTextState extends State<HeadingText> {
 class SubHeadingText extends StatefulWidget {
   String subHeadingText;
 
-  SubHeadingText({required this.subHeadingText});
+  SubHeadingText({super.key, required this.subHeadingText});
   @override
   State<SubHeadingText> createState() => _SubHeadingTextState();
 }

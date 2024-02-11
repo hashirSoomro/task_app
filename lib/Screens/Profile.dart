@@ -44,7 +44,7 @@ class _ProfileState extends State<Profile> {
                 Navigator.pop(context);
               }),
           backgroundColor: Colors.transparent,
-          foregroundColor: Color(0xFF002055),
+          foregroundColor: const Color(0xFF002055),
           shadowColor: Colors.transparent,
         ),
         body: Column(
@@ -81,7 +81,7 @@ class _ProfileState extends State<Profile> {
                                   ),
                           ),
                         ),
-                        SizedBox(height: 20),
+                        const SizedBox(height: 20),
                         Text(
                           "Hashir Soomro",
                           style: GoogleFonts.poppins(
@@ -102,7 +102,7 @@ class _ProfileState extends State<Profile> {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         InkWell(
@@ -111,14 +111,14 @@ class _ProfileState extends State<Profile> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: ((context) => EditProfile())));
+                                    builder: ((context) => const EditProfile())));
                           },
                           child: Container(
                             height: 28,
                             width: 54,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(8),
-                                border: Border.all(color: Color(0xFF756EF3))),
+                                border: Border.all(color: const Color(0xFF756EF3))),
                             child: Center(
                               child: Text(
                                 "Edit",
@@ -133,7 +133,7 @@ class _ProfileState extends State<Profile> {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 2,
                         ),
                         Padding(
@@ -170,7 +170,7 @@ class _ProfileState extends State<Profile> {
                                     ),
                                   ],
                                 ),
-                                VerticalDivider(
+                                const VerticalDivider(
                                   indent: 5,
                                   endIndent: 5,
                                   color: Color(0xFFE9F1FF),
@@ -225,17 +225,17 @@ class _ProfileState extends State<Profile> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => Settings(),
+                                builder: (context) => const Settings(),
                               ));
                         },
                         child: Container(
                           width: 327,
                           height: 56,
                           decoration: BoxDecoration(
-                              border: Border.all(color: Color(0xFFE9F1FF)),
+                              border: Border.all(color: const Color(0xFFE9F1FF)),
                               borderRadius: BorderRadius.circular(12)),
                           child: Padding(
-                            padding: EdgeInsets.only(
+                            padding: const EdgeInsets.only(
                                 left: 16, top: 10, bottom: 10, right: 16),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -252,7 +252,7 @@ class _ProfileState extends State<Profile> {
                                 ),
                                 InkWell(
                                     onTap: () {},
-                                    child: ImageIcon(AssetImage(
+                                    child: const ImageIcon(AssetImage(
                                         "assets/icons/StrokeBack.png")))
                               ],
                             ),
@@ -266,6 +266,6 @@ class _ProfileState extends State<Profile> {
             )
           ],
         ),
-        bottomNavigationBar: BottomBar());
+        bottomNavigationBar: const BottomBar());
   }
 }

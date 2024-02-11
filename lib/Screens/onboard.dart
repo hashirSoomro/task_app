@@ -1,4 +1,3 @@
-import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -13,8 +12,8 @@ class Onboard extends StatefulWidget {
 
 class _OnboardState extends State<Onboard> {
   int _currentPage = 0;
-  final Color customSelectedColor = Color(0xFF5451D6);
-  final Color customNonSelectedColor = Color(0x665451D6);
+  final Color customSelectedColor = const Color(0xFF5451D6);
+  final Color customNonSelectedColor = const Color(0x665451D6);
   final imgs = [
     'assets/images/Gallery1.png',
     'assets/images/Gallery2.png',
@@ -69,7 +68,7 @@ class _OnboardState extends State<Onboard> {
                         child: Container(
                           width: _currentPage == index ? 25.0 : 6.0,
                           height: 6.0,
-                          margin: EdgeInsets.symmetric(horizontal: 4.0),
+                          margin: const EdgeInsets.symmetric(horizontal: 4.0),
                           decoration: BoxDecoration(
                             borderRadius: _currentPage == index
                                 ? BorderRadius.circular(12.0)
@@ -82,13 +81,13 @@ class _OnboardState extends State<Onboard> {
                       );
                     }),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 35,
                   ),
                   InkWell(
                     onTap: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => SignIn()));
+                          MaterialPageRoute(builder: (context) => const SignIn()));
                     },
                     child: Text(
                       "Skip",
@@ -132,7 +131,7 @@ class _OnboardState extends State<Onboard> {
                       }
                     });
                   },
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.arrow_forward,
                     color: Colors.white,
                   )),
@@ -148,7 +147,7 @@ class ImageWidget extends StatefulWidget {
   final int currentPage;
   final List<String> imgs;
 
-  ImageWidget({required this.currentPage, required this.imgs});
+  const ImageWidget({super.key, required this.currentPage, required this.imgs});
 
   @override
   _ImageWidgetState createState() => _ImageWidgetState();
@@ -179,8 +178,8 @@ class TextWidget extends StatefulWidget {
   final List<String> text3;
   final List<String> text4;
 
-  TextWidget(
-      {required this.currentPage,
+  const TextWidget(
+      {super.key, required this.currentPage,
       required this.text1,
       required this.text2,
       required this.text3,
@@ -205,7 +204,7 @@ class _TextWidgetState extends State<TextWidget> {
             ),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10, // Use width to add horizontal spacing
         ),
         Text(
@@ -266,7 +265,7 @@ class _TextWidgetState extends State<TextWidget> {
             ),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 25,
         ),
       ],

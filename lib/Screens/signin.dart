@@ -28,39 +28,39 @@ class _SignInState extends State<SignIn> {
           },
         ),
         backgroundColor: Colors.transparent,
-        foregroundColor: Color(0xFF002055),
+        foregroundColor: const Color(0xFF002055),
         shadowColor: Colors.transparent,
       ),
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.only(top: 36, left: 24, right: 24),
+          padding: const EdgeInsets.only(top: 36, left: 24, right: 24),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               HeadingText(headingText: "Welcome Back"),
-              SizedBox(
+              const SizedBox(
                 height: 14,
               ),
               SubHeadingText(
                   subHeadingText:
                       "Please enter your email address\nand password for login."),
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
               AppTextField(
                 hintText: "Enter your email",
                 obscureText: false,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               AppTextField(hintText: "Enter your password", obscureText: true),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Row(
                 children: [
-                  Spacer(),
+                  const Spacer(),
                   InkWell(
                     onTap: () {},
                     child: Text(
@@ -86,23 +86,23 @@ class _SignInState extends State<SignIn> {
                     // Add your button's onPressed functionality here
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Home()),
+                      MaterialPageRoute(builder: (context) => const Home()),
                     );
                   },
-                  child: Text(
+                  gradientColors: const [Color(0xFF756EF3), Color(0xFF756EF3)],
+                  width:
+                      MediaQuery.of(context).size.width * 0.85, // Set the width
+                  height: 60.0,
+                  child: const Text(
                     'Sign In',
                     style: TextStyle(
                       fontSize: 20,
                       color: Colors.white,
                     ),
-                  ),
-                  gradientColors: [Color(0xFF756EF3), Color(0xFF756EF3)],
-                  width:
-                      MediaQuery.of(context).size.width * 0.85, // Set the width
-                  height: 60.0, // Set the height
+                  ), // Set the height
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Center(
@@ -118,7 +118,7 @@ class _SignInState extends State<SignIn> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               Row(
@@ -134,7 +134,7 @@ class _SignInState extends State<SignIn> {
                       height: 55.0, // Set the height of the image
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 30,
                   ),
                   InkWell(
@@ -149,7 +149,7 @@ class _SignInState extends State<SignIn> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Row(
@@ -169,7 +169,7 @@ class _SignInState extends State<SignIn> {
                   InkWell(
                     onTap: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => SignUp()));
+                          MaterialPageRoute(builder: (context) => const SignUp()));
                     },
                     child: Text(
                       "Sign Up",

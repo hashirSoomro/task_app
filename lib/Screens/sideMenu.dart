@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
-import '../TitleAppBar.dart';
 import '../circleIcon.dart';
 import '../gradientButton.dart';
 import 'Profile.dart';
@@ -41,7 +40,7 @@ class _SideMenuState extends State<SideMenu> {
                 Navigator.pop(context);
               }),
           backgroundColor: Colors.transparent,
-          foregroundColor: Color(0xFF002055),
+          foregroundColor: const Color(0xFF002055),
           shadowColor: Colors.transparent,
         ),
         body: Column(children: [
@@ -75,7 +74,7 @@ class _SideMenuState extends State<SideMenu> {
                                 ),
                         ),
                       ),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       Text(
                         "Hashir Soomro",
                         style: GoogleFonts.poppins(
@@ -96,7 +95,7 @@ class _SideMenuState extends State<SideMenu> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       InkWell(
@@ -105,14 +104,14 @@ class _SideMenuState extends State<SideMenu> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: ((context) => Profile())));
+                                  builder: ((context) => const Profile())));
                         },
                         child: Container(
                           height: 28,
                           width: 85,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(8),
-                              border: Border.all(color: Color(0xFF756EF3))),
+                              border: Border.all(color: const Color(0xFF756EF3))),
                           child: Center(
                             child: Text(
                               "View Profile",
@@ -127,11 +126,11 @@ class _SideMenuState extends State<SideMenu> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 2,
                       ),
                     ])),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Text(
@@ -144,14 +143,14 @@ class _SideMenuState extends State<SideMenu> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Container(
                       height: 64,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16),
-                        border: Border.all(color: Color(0xFFE9F1FF)),
+                        border: Border.all(color: const Color(0xFFE9F1FF)),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.only(
@@ -178,7 +177,7 @@ class _SideMenuState extends State<SideMenu> {
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(8),
                                     border:
-                                        Border.all(color: Color(0xFF756EF3))),
+                                        Border.all(color: const Color(0xFF756EF3))),
                                 child: Center(
                                   child: Text(
                                     "Invite",
@@ -197,7 +196,7 @@ class _SideMenuState extends State<SideMenu> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
                     Text(
@@ -210,7 +209,7 @@ class _SideMenuState extends State<SideMenu> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Row(
@@ -221,7 +220,7 @@ class _SideMenuState extends State<SideMenu> {
                             height: 64,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(16),
-                              border: Border.all(color: Color(0xFFE9F1FF)),
+                              border: Border.all(color: const Color(0xFFE9F1FF)),
                             ),
                             child: Padding(
                               padding: const EdgeInsets.only(
@@ -246,7 +245,7 @@ class _SideMenuState extends State<SideMenu> {
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(8),
                                         border: Border.all(
-                                            color: Color(0xFFE9F1FF))),
+                                            color: const Color(0xFFE9F1FF))),
                                     child: Center(
                                       child: Text(
                                         "8",
@@ -265,7 +264,7 @@ class _SideMenuState extends State<SideMenu> {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
                         Expanded(
@@ -273,7 +272,7 @@ class _SideMenuState extends State<SideMenu> {
                             height: 64,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(16),
-                              border: Border.all(color: Color(0xFFE9F1FF)),
+                              border: Border.all(color: const Color(0xFFE9F1FF)),
                             ),
                             child: Padding(
                               padding: const EdgeInsets.only(
@@ -298,7 +297,7 @@ class _SideMenuState extends State<SideMenu> {
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(8),
                                         border: Border.all(
-                                            color: Color(0xFFE9F1FF))),
+                                            color: const Color(0xFFE9F1FF))),
                                     child: Center(
                                       child: Text(
                                         "13",
@@ -319,7 +318,7 @@ class _SideMenuState extends State<SideMenu> {
                         )
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Row(
@@ -330,7 +329,7 @@ class _SideMenuState extends State<SideMenu> {
                             height: 64,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(16),
-                              border: Border.all(color: Color(0xFFE9F1FF)),
+                              border: Border.all(color: const Color(0xFFE9F1FF)),
                             ),
                             child: Padding(
                               padding: const EdgeInsets.only(
@@ -355,7 +354,7 @@ class _SideMenuState extends State<SideMenu> {
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(8),
                                         border: Border.all(
-                                            color: Color(0xFFE9F1FF))),
+                                            color: const Color(0xFFE9F1FF))),
                                     child: Center(
                                       child: Text(
                                         "20",
@@ -374,7 +373,7 @@ class _SideMenuState extends State<SideMenu> {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
                         Expanded(
@@ -382,7 +381,7 @@ class _SideMenuState extends State<SideMenu> {
                             height: 64,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(16),
-                              border: Border.all(color: Color(0xFFE9F1FF)),
+                              border: Border.all(color: const Color(0xFFE9F1FF)),
                             ),
                             child: Padding(
                               padding: const EdgeInsets.only(
@@ -407,7 +406,7 @@ class _SideMenuState extends State<SideMenu> {
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(8),
                                         border: Border.all(
-                                            color: Color(0xFFE9F1FF))),
+                                            color: const Color(0xFFE9F1FF))),
                                     child: Center(
                                       child: Text(
                                         "11",
@@ -428,23 +427,23 @@ class _SideMenuState extends State<SideMenu> {
                         )
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 25,
                     ),
                     Center(
                       child: GradientButton(
                         onPressed: () {},
-                        child: Text(
+                        gradientColors: const [Color(0xFF756EF3), Color(0xFF756EF3)],
+                        width: MediaQuery.of(context).size.width *
+                            0.85, // Set the width
+                        height: 60.0,
+                        child: const Text(
                           'Log Out',
                           style: TextStyle(
                             fontSize: 20,
                             color: Colors.white,
                           ),
-                        ),
-                        gradientColors: [Color(0xFF756EF3), Color(0xFF756EF3)],
-                        width: MediaQuery.of(context).size.width *
-                            0.85, // Set the width
-                        height: 60.0, // Set the height
+                        ), // Set the height
                       ),
                     ),
                   ]))

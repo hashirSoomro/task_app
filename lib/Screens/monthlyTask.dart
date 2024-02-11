@@ -40,11 +40,11 @@ class _MonthlyTaskState extends State<MonthlyTask> {
             },
           ),
           backgroundColor: Colors.transparent,
-          foregroundColor: Color(0xFF002055),
+          foregroundColor: const Color(0xFF002055),
           shadowColor: Colors.transparent,
         ),
         body: Container(
-            padding: EdgeInsets.only(top: 10, left: 24, right: 24),
+            padding: const EdgeInsets.only(top: 10, left: 24, right: 24),
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -56,50 +56,50 @@ class _MonthlyTaskState extends State<MonthlyTask> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              SizedBox(
+                              const SizedBox(
                                 height: 15,
                               ),
                               HeadingText(headingText: "October, 20"),
-                              SizedBox(
+                              const SizedBox(
                                 height: 5,
                               ),
                               SubHeadingText(subHeadingText: "15 task today"),
                             ]),
                         Container(
-                          margin: EdgeInsets.all(7),
+                          margin: const EdgeInsets.all(7),
                           width: 42.0,
                           height: 42.0,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             shape: BoxShape.circle,
                           ),
                           child: CircleAvatar(
-                            backgroundColor: Color(0xFF756EF3),
+                            backgroundColor: const Color(0xFF756EF3),
                             radius: 1.0,
                             child: IconButton(
                               onPressed: () {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => TodayTask()));
+                                        builder: (context) => const TodayTask()));
                               },
-                              icon: ImageIcon(
+                              icon: const ImageIcon(
                                 AssetImage('assets/icons/Calendar.png'),
                                 size: 16,
                               ),
-                              color: Color(0xFFFFFFFF),
+                              color: const Color(0xFFFFFFFF),
                             ),
                           ),
                         ),
                       ]),
-                  CalendarWidget(),
+                  const CalendarWidget(),
                   Flexible(
                     child: Container(
                       height: 270,
-                      margin: EdgeInsets.only(
+                      margin: const EdgeInsets.only(
                           top: 10, right: 10, left: 10, bottom: 0),
                       decoration: BoxDecoration(
                         border: Border.all(
-                          color: Color(0xFFE9F1FF),
+                          color: const Color(0xFFE9F1FF),
                           width: 1.0,
                         ),
                         borderRadius: BorderRadius.circular(10),
@@ -110,12 +110,12 @@ class _MonthlyTaskState extends State<MonthlyTask> {
                         lastDay: DateTime.utc(2023, 12, 31),
                         focusedDay: _focusedDay,
                         daysOfWeekStyle: DaysOfWeekStyle(
-                          weekdayStyle: TextStyle(
+                          weekdayStyle: const TextStyle(
                             color: Color(0xFF848A94),
                             fontSize: 13,
                             fontWeight: FontWeight.w500,
                           ),
-                          weekendStyle: TextStyle(
+                          weekendStyle: const TextStyle(
                             color: Color(0xFF848A94),
                             fontSize: 13,
                             fontWeight: FontWeight.w500,
@@ -125,17 +125,17 @@ class _MonthlyTaskState extends State<MonthlyTask> {
                         ),
                         calendarFormat: _calendarFormat,
                         calendarStyle: CalendarStyle(
-                          defaultTextStyle: TextStyle(
+                          defaultTextStyle: const TextStyle(
                             fontSize: 13,
                             fontWeight: FontWeight.w500,
                             color: Color(0xFF002055),
                           ),
-                          selectedTextStyle: TextStyle(
+                          selectedTextStyle: const TextStyle(
                             fontSize: 13,
                             fontWeight: FontWeight.w500,
                             color: Color(0xFF756EF3),
                           ),
-                          todayTextStyle: TextStyle(
+                          todayTextStyle: const TextStyle(
                             fontSize: 13,
                             fontWeight: FontWeight.w500,
                             color: Color(0xFF756EF3),
@@ -143,19 +143,19 @@ class _MonthlyTaskState extends State<MonthlyTask> {
                           selectedDecoration: BoxDecoration(
                             color: Colors.transparent,
                             border: Border.all(
-                              color: Color(0xFF756EF3),
+                              color: const Color(0xFF756EF3),
                             ),
                             shape: BoxShape.circle,
                           ),
                           todayDecoration: BoxDecoration(
                             color: Colors.transparent,
                             border: Border.all(
-                              color: Color(0xFF756EF3),
+                              color: const Color(0xFF756EF3),
                             ),
                             shape: BoxShape.circle,
                           ),
                         ),
-                        headerStyle: HeaderStyle(
+                        headerStyle: const HeaderStyle(
                           titleTextStyle: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.w500,
@@ -183,6 +183,6 @@ class _MonthlyTaskState extends State<MonthlyTask> {
                     ),
                   ),
                 ])),
-        bottomNavigationBar: BottomBar());
+        bottomNavigationBar: const BottomBar());
   }
 }

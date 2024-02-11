@@ -35,7 +35,7 @@ class _HomeState extends State<Home> {
             img: 'assets/icons/Notifications.png',
             onPressed: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => TodayTask()));
+                  MaterialPageRoute(builder: (context) => const TodayTask()));
             },
           )
         ],
@@ -43,11 +43,11 @@ class _HomeState extends State<Home> {
           img: 'assets/icons/Category.png',
           onPressed: () {
             Navigator.push(
-                context, MaterialPageRoute(builder: (context) => SideMenu()));
+                context, MaterialPageRoute(builder: (context) => const SideMenu()));
           },
         ),
         backgroundColor: Colors.transparent,
-        foregroundColor: Color(0xFF002055),
+        foregroundColor: const Color(0xFF002055),
         shadowColor: Colors.transparent,
       ),
       body: Column(
@@ -56,10 +56,10 @@ class _HomeState extends State<Home> {
           Padding(
               padding: const EdgeInsets.only(left: 30, top: 20),
               child: HeadingText(headingText: "Let's make a\nhabit together")),
-          SizedBox(
+          const SizedBox(
             height: 25,
           ),
-          Container(
+          SizedBox(
             height: 140.0,
             width: MediaQuery.of(context).size.width,
             child: CarouselSlider.builder(
@@ -75,17 +75,17 @@ class _HomeState extends State<Home> {
                   viewportFraction: 79 / 100),
               itemBuilder: (context, index, realIndex) {
                 Color containerColor =
-                    (index == _currentPage) ? Color(0xFF756EF3) : Colors.white;
+                    (index == _currentPage) ? const Color(0xFF756EF3) : Colors.white;
                 Color textColorMain = (index == _currentPage)
-                    ? Color(0xFFFFFFFF)
-                    : Color(0xFF002055);
+                    ? const Color(0xFFFFFFFF)
+                    : const Color(0xFF002055);
                 Color textColorSub = (index == _currentPage)
-                    ? Color(0xFFC5DAFD)
-                    : Color(0xFFA0BAC5);
+                    ? const Color(0xFFC5DAFD)
+                    : const Color(0xFFA0BAC5);
                 Color textColorSub2 =
                     (index == _currentPage) ? Colors.white : Colors.transparent;
                 Color ProgressBarColor = (index == _currentPage)
-                    ? Color.fromARGB(255, 184, 188, 196)
+                    ? const Color.fromARGB(255, 184, 188, 196)
                     : Colors.transparent;
 
                 return GestureDetector(
@@ -97,7 +97,7 @@ class _HomeState extends State<Home> {
                   child: GestureDetector(
                     onTap: () {},
                     child: Container(
-                      margin: EdgeInsets.only(
+                      margin: const EdgeInsets.only(
                         right: 35.0,
                       ),
                       height: 140,
@@ -108,7 +108,7 @@ class _HomeState extends State<Home> {
                             BorderRadius.circular(20.0), // Rounded borders
                       ),
                       child: Padding(
-                        padding: EdgeInsets.only(top: 23, left: 23),
+                        padding: const EdgeInsets.only(top: 23, left: 23),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -124,7 +124,7 @@ class _HomeState extends State<Home> {
                                 ),
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 8,
                             ),
                             Text(
@@ -148,7 +148,7 @@ class _HomeState extends State<Home> {
                                     for (int i = 0;
                                         i < ProfileImages.length;
                                         i++)
-                                      Align(
+                                      const Align(
                                         widthFactor: 0.8,
                                         child: CircleAvatar(
                                           backgroundColor: Colors.white,
@@ -181,7 +181,7 @@ class _HomeState extends State<Home> {
                                             ),
                                           ),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 25,
                                         ),
                                         Text(
@@ -197,7 +197,7 @@ class _HomeState extends State<Home> {
                                         ),
                                       ],
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 10,
                                     ),
                                     SizedBox(
@@ -212,7 +212,7 @@ class _HomeState extends State<Home> {
                                               0.5, // Set the progress value between 0.0 and 1.0
                                           backgroundColor:
                                               ProgressBarColor, // Background color
-                                          valueColor: AlwaysStoppedAnimation<
+                                          valueColor: const AlwaysStoppedAnimation<
                                                   Color>(
                                               Colors.white), // Progress color
                                         ),
@@ -234,7 +234,7 @@ class _HomeState extends State<Home> {
           Column(
             children: [
               Padding(
-                padding: EdgeInsets.only(top: 24, left: 30, right: 30),
+                padding: const EdgeInsets.only(top: 24, left: 30, right: 30),
                 child: Row(
                   children: [
                     Text(
@@ -248,10 +248,10 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     InkWell(
                       onTap: () {},
-                      child: Icon(
+                      child: const Icon(
                         Icons.arrow_forward_ios_outlined,
                         size: 18,
                         color: Color(0xFF756EF3),
@@ -260,7 +260,7 @@ class _HomeState extends State<Home> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 14,
               )
             ],
@@ -275,7 +275,7 @@ class _HomeState extends State<Home> {
                   itemCount: 3,
                   itemBuilder: (context, index) {
                     return Padding(
-                      padding: EdgeInsets.only(left: 24, right: 24, bottom: 13),
+                      padding: const EdgeInsets.only(left: 24, right: 24, bottom: 13),
                       child: Container(
                         height: 80,
                         width: 327,
@@ -283,7 +283,7 @@ class _HomeState extends State<Home> {
                             borderRadius: BorderRadius.circular(14),
                             shape: BoxShape.rectangle,
                             border: Border.all(
-                                color: Color.fromARGB(255, 218, 230, 250))),
+                                color: const Color.fromARGB(255, 218, 230, 250))),
                         child: Padding(
                           padding: const EdgeInsets.all(15.0),
                           child: Row(
@@ -326,15 +326,15 @@ class _HomeState extends State<Home> {
                                   ),
                                 ],
                               ),
-                              Spacer(),
+                              const Spacer(),
                               Center(
                                 child: Stack(
                                   alignment: Alignment.center,
                                   children: [
                                     CircularProgressIndicator(
                                       value: progress,
-                                      backgroundColor: Color(0xFFD1E2FE),
-                                      valueColor: AlwaysStoppedAnimation<Color>(
+                                      backgroundColor: const Color(0xFFD1E2FE),
+                                      valueColor: const AlwaysStoppedAnimation<Color>(
                                           Color(0xFF756EF3)),
                                     ),
                                     Text(
@@ -363,7 +363,7 @@ class _HomeState extends State<Home> {
           ),
         ],
       ),
-      bottomNavigationBar: BottomBar(),
+      bottomNavigationBar: const BottomBar(),
     );
   }
 }

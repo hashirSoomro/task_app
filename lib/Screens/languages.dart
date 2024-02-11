@@ -23,7 +23,7 @@ class _LanguagesState extends State<Languages> {
                 Navigator.pop(context);
               }),
           backgroundColor: Colors.transparent,
-          foregroundColor: Color(0xFF002055),
+          foregroundColor: const Color(0xFF002055),
           shadowColor: Colors.transparent,
         ),
         body: Padding(
@@ -32,7 +32,7 @@ class _LanguagesState extends State<Languages> {
                 behavior:
                     ScrollConfiguration.of(context).copyWith(scrollbars: false),
                 child: ListView(children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   InkWell(
@@ -42,7 +42,7 @@ class _LanguagesState extends State<Languages> {
                       height: 64,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16),
-                        border: Border.all(color: Color(0xFFE9F1FF)),
+                        border: Border.all(color: const Color(0xFFE9F1FF)),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.only(
@@ -65,7 +65,7 @@ class _LanguagesState extends State<Languages> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   InkWell(
@@ -75,7 +75,7 @@ class _LanguagesState extends State<Languages> {
                       height: 64,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16),
-                        border: Border.all(color: Color(0xFFE9F1FF)),
+                        border: Border.all(color: const Color(0xFFE9F1FF)),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.only(
@@ -98,7 +98,7 @@ class _LanguagesState extends State<Languages> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   InkWell(
@@ -108,7 +108,7 @@ class _LanguagesState extends State<Languages> {
                       height: 64,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16),
-                        border: Border.all(color: Color(0xFFE9F1FF)),
+                        border: Border.all(color: const Color(0xFFE9F1FF)),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.only(
@@ -131,7 +131,7 @@ class _LanguagesState extends State<Languages> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   InkWell(
@@ -141,7 +141,7 @@ class _LanguagesState extends State<Languages> {
                       height: 64,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16),
-                        border: Border.all(color: Color(0xFFE9F1FF)),
+                        border: Border.all(color: const Color(0xFFE9F1FF)),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.only(

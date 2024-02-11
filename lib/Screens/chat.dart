@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:task_app/Screens/taskStatus.dart';
 import 'package:task_app/TitleAppBar.dart';
@@ -39,7 +37,7 @@ class _ChatState extends State<Chat> {
               img: "assets/icons/Add.png",
               onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: ((context) => TaskStatus())));
+                    MaterialPageRoute(builder: ((context) => const TaskStatus())));
               })
         ],
         leading: CircleIcon(
@@ -48,18 +46,18 @@ class _ChatState extends State<Chat> {
               Navigator.pop(context);
             }),
         backgroundColor: Colors.transparent,
-        foregroundColor: Color(0xFF002055),
+        foregroundColor: const Color(0xFF002055),
         shadowColor: Colors.transparent,
       ),
       body: Padding(
-          padding: EdgeInsets.only(top: 20, left: 16, right: 16),
+          padding: const EdgeInsets.only(top: 20, left: 16, right: 16),
           child: Column(children: [
             TextField(
               decoration: InputDecoration(
                 hintText: 'Search',
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20),
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: Color.fromARGB(255, 202, 209, 221),
                   ),
                 ),
@@ -70,7 +68,7 @@ class _ChatState extends State<Chat> {
                     color: Color(0xFF868D95),
                   ),
                 ),
-                prefixIcon: ImageIcon(AssetImage('assets/icons/Search.png')),
+                prefixIcon: const ImageIcon(AssetImage('assets/icons/Search.png')),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20.0),
                 ),
@@ -83,7 +81,7 @@ class _ChatState extends State<Chat> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 25,
             ),
             Expanded(
@@ -98,16 +96,16 @@ class _ChatState extends State<Chat> {
                       title: Text(chatMembers[index].name),
                       subtitle: Text(chatMembers[index].activeStatus),
                       trailing:
-                          ImageIcon(AssetImage("assets/icons/camera.png")));
+                          const ImageIcon(AssetImage("assets/icons/camera.png")));
                 },
-                separatorBuilder: (context, index) => Divider(
+                separatorBuilder: (context, index) => const Divider(
                   color: Color(0xFFE9F1FF),
                   thickness: 0.6,
                 ),
               ),
             )
           ])),
-      bottomNavigationBar: BottomBar(),
+      bottomNavigationBar: const BottomBar(),
     );
   }
 }

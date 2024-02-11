@@ -4,12 +4,14 @@ import 'package:intl/intl.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class TextFieldCalendar extends StatefulWidget {
+  const TextFieldCalendar({super.key});
+
   @override
   _TextFieldCalendarState createState() => _TextFieldCalendarState();
 }
 
 class _TextFieldCalendarState extends State<TextFieldCalendar> {
-  TextEditingController _dateController = TextEditingController();
+  final TextEditingController _dateController = TextEditingController();
   DateTime? _selectedDate;
   DateTime? _focusedDate;
 
@@ -23,7 +25,7 @@ class _TextFieldCalendarState extends State<TextFieldCalendar> {
       builder: (BuildContext context) {
         return Dialog(
           child: Container(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -32,12 +34,12 @@ class _TextFieldCalendarState extends State<TextFieldCalendar> {
                   lastDay: DateTime.utc(2023, 12, 31),
                   focusedDay: _focusedDay,
                   daysOfWeekStyle: DaysOfWeekStyle(
-                    weekdayStyle: TextStyle(
+                    weekdayStyle: const TextStyle(
                       color: Color(0xFF848A94),
                       fontSize: 13,
                       fontWeight: FontWeight.w500,
                     ),
-                    weekendStyle: TextStyle(
+                    weekendStyle: const TextStyle(
                       color: Color(0xFF848A94),
                       fontSize: 13,
                       fontWeight: FontWeight.w500,
@@ -47,17 +49,17 @@ class _TextFieldCalendarState extends State<TextFieldCalendar> {
                   ),
                   calendarFormat: _calendarFormat,
                   calendarStyle: CalendarStyle(
-                    defaultTextStyle: TextStyle(
+                    defaultTextStyle: const TextStyle(
                       fontSize: 13,
                       fontWeight: FontWeight.w500,
                       color: Color(0xFF002055),
                     ),
-                    selectedTextStyle: TextStyle(
+                    selectedTextStyle: const TextStyle(
                       fontSize: 13,
                       fontWeight: FontWeight.w500,
                       color: Color(0xFF756EF3), // Color for the selected date
                     ),
-                    todayTextStyle: TextStyle(
+                    todayTextStyle: const TextStyle(
                       fontSize: 13,
                       fontWeight: FontWeight.w500,
                       color: Color(0xFF756EF3),
@@ -65,19 +67,19 @@ class _TextFieldCalendarState extends State<TextFieldCalendar> {
                     selectedDecoration: BoxDecoration(
                       color: Colors.transparent,
                       border: Border.all(
-                        color: Color(0xFF756EF3),
+                        color: const Color(0xFF756EF3),
                       ),
                       shape: BoxShape.circle,
                     ),
                     todayDecoration: BoxDecoration(
                       color: Colors.transparent,
                       border: Border.all(
-                        color: Color(0xFF756EF3),
+                        color: const Color(0xFF756EF3),
                       ),
                       shape: BoxShape.circle,
                     ),
                   ),
-                  headerStyle: HeaderStyle(
+                  headerStyle: const HeaderStyle(
                     titleTextStyle: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w500,
@@ -126,7 +128,7 @@ class _TextFieldCalendarState extends State<TextFieldCalendar> {
       onTap: () {
         _showCalendar(context);
       },
-      cursorColor: Color(0xFF756EF3),
+      cursorColor: const Color(0xFF756EF3),
       decoration: InputDecoration(
         hintText: "Tap to select the date",
         hintStyle: GoogleFonts.poppins(
@@ -138,11 +140,11 @@ class _TextFieldCalendarState extends State<TextFieldCalendar> {
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20),
-          borderSide: BorderSide(color: Color.fromARGB(255, 202, 209, 221)),
+          borderSide: const BorderSide(color: Color.fromARGB(255, 202, 209, 221)),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20),
-          borderSide: BorderSide(
+          borderSide: const BorderSide(
             color: Color(0xFF756EF3),
           ),
         ),

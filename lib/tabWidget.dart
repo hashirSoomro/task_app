@@ -6,7 +6,7 @@ class TabWidget extends StatefulWidget {
   String second;
   String third;
 
-  TabWidget({
+  TabWidget({super.key, 
     required this.first,
     required this.second,
     required this.third,
@@ -27,7 +27,7 @@ class _TabWidgetState extends State<TabWidget> {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(6),
         border: Border.all(
-          color: isSelected ? Color(0xFF756EF3) : Colors.transparent,
+          color: isSelected ? const Color(0xFF756EF3) : Colors.transparent,
         ),
       ),
       child: TextButton(
@@ -42,7 +42,7 @@ class _TabWidgetState extends State<TabWidget> {
             textStyle: TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w500,
-              color: isSelected ? Color(0xFF002055) : Color(0xFF848A94),
+              color: isSelected ? const Color(0xFF002055) : const Color(0xFF848A94),
             ),
           ),
         ),
@@ -55,11 +55,11 @@ class _TabWidgetState extends State<TabWidget> {
     return Row(
       children: [
         buildTabButton(widget.first, 0),
-        SizedBox(
+        const SizedBox(
           width: 7,
         ),
         buildTabButton(widget.second, 1),
-        SizedBox(
+        const SizedBox(
           width: 7,
         ),
         buildTabButton(widget.third, 2),

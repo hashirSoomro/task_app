@@ -3,11 +3,13 @@ import 'package:google_fonts/google_fonts.dart';
 import '../gradientButton.dart';
 import 'onboard.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   final Color customPrimaryColor =
-      Color(0xFF756EF3); // Replace with your hex code
+      const Color(0xFF756EF3);
+
+  const MyApp({super.key}); // Replace with your hex code
 
   // Create a custom primary swatch
   MaterialColor get customPrimarySwatch =>
@@ -46,8 +48,8 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _currentPage = 0;
-  final Color customSelectedColor = Color(0xFF5451D6);
-  final Color customNonSelectedColor = Color(0x665451D6);
+  final Color customSelectedColor = const Color(0xFF5451D6);
+  final Color customNonSelectedColor = const Color(0x665451D6);
 
   @override
   Widget build(BuildContext context) {
@@ -89,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Container(
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30.0),
-                  color: Color(0xFFF8F6FF)),
+                  color: const Color(0xFFF8F6FF)),
               child: Center(
                 child: Column(
                   children: [
@@ -108,7 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           child: Container(
                             width: _currentPage == index ? 25.0 : 6.0,
                             height: 6.0,
-                            margin: EdgeInsets.symmetric(horizontal: 4.0),
+                            margin: const EdgeInsets.symmetric(horizontal: 4.0),
                             decoration: BoxDecoration(
                               borderRadius: _currentPage == index
                                   ? BorderRadius.circular(12.0)
@@ -156,7 +158,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           height: 1.8,
                           fontFamily: 'ProductSans',
                           fontWeight: FontWeight.w700,
-                          color: Color(0xFF8D8D8D).withOpacity(0.6)),
+                          color: const Color(0xFF8D8D8D).withOpacity(0.6)),
                       textAlign: TextAlign.center,
                     ),
                     const SizedBox(
@@ -167,20 +169,20 @@ class _MyHomePageState extends State<MyHomePage> {
                         // Add your button's onPressed functionality here
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Onboard()),
+                          MaterialPageRoute(builder: (context) => const Onboard()),
                         );
                       },
-                      child: Text(
+                      gradientColors: const [Color(0xFF8B78FF), Color(0xFF5451D6)],
+                      width: MediaQuery.of(context).size.width *
+                          0.85, // Set the width
+                      height: 60.0,
+                      child: const Text(
                         'Get Started',
                         style: TextStyle(
                           fontSize: 20,
                           color: Colors.white,
                         ),
-                      ),
-                      gradientColors: [Color(0xFF8B78FF), Color(0xFF5451D6)],
-                      width: MediaQuery.of(context).size.width *
-                          0.85, // Set the width
-                      height: 60.0, // Set the height
+                      ), // Set the height
                     ),
                   ],
                 ),

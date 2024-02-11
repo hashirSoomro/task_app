@@ -26,7 +26,7 @@ class _SettingsState extends State<Settings> {
               Navigator.pop(context);
             }),
         backgroundColor: Colors.transparent,
-        foregroundColor: Color(0xFF002055),
+        foregroundColor: const Color(0xFF002055),
         shadowColor: Colors.transparent,
       ),
       body: Padding(
@@ -35,7 +35,7 @@ class _SettingsState extends State<Settings> {
           behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
           child: ListView(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Column(
@@ -51,7 +51,7 @@ class _SettingsState extends State<Settings> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   InkWell(
@@ -61,7 +61,7 @@ class _SettingsState extends State<Settings> {
                       height: 64,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16),
-                        border: Border.all(color: Color(0xFFE9F1FF)),
+                        border: Border.all(color: const Color(0xFFE9F1FF)),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.only(
@@ -84,7 +84,7 @@ class _SettingsState extends State<Settings> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   InkWell(
@@ -94,7 +94,7 @@ class _SettingsState extends State<Settings> {
                       height: 64,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16),
-                        border: Border.all(color: Color(0xFFE9F1FF)),
+                        border: Border.all(color: const Color(0xFFE9F1FF)),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.only(
@@ -117,7 +117,7 @@ class _SettingsState extends State<Settings> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   Text(
@@ -130,14 +130,14 @@ class _SettingsState extends State<Settings> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Container(
                     height: 64,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(16),
-                      border: Border.all(color: Color(0xFFE9F1FF)),
+                      border: Border.all(color: const Color(0xFFE9F1FF)),
                     ),
                     child: Padding(
                       padding: const EdgeInsets.only(
@@ -167,7 +167,7 @@ class _SettingsState extends State<Settings> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   InkWell(
@@ -176,7 +176,7 @@ class _SettingsState extends State<Settings> {
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16),
-                        border: Border.all(color: Color(0xFFE9F1FF)),
+                        border: Border.all(color: const Color(0xFFE9F1FF)),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.only(
@@ -197,7 +197,7 @@ class _SettingsState extends State<Settings> {
                                     ),
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 2,
                                 ),
                                 Text(
@@ -218,7 +218,7 @@ class _SettingsState extends State<Settings> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   InkWell(
@@ -227,7 +227,7 @@ class _SettingsState extends State<Settings> {
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16),
-                        border: Border.all(color: Color(0xFFE9F1FF)),
+                        border: Border.all(color: const Color(0xFFE9F1FF)),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.only(
@@ -248,7 +248,7 @@ class _SettingsState extends State<Settings> {
                                     ),
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 2,
                                 ),
                                 Text(
@@ -269,7 +269,7 @@ class _SettingsState extends State<Settings> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   Text(
@@ -282,7 +282,7 @@ class _SettingsState extends State<Settings> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   InkWell(
@@ -291,7 +291,7 @@ class _SettingsState extends State<Settings> {
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16),
-                        border: Border.all(color: Color(0xFFE9F1FF)),
+                        border: Border.all(color: const Color(0xFFE9F1FF)),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.only(
@@ -312,7 +312,7 @@ class _SettingsState extends State<Settings> {
                                     ),
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 2,
                                 ),
                                 Text(
@@ -341,20 +341,20 @@ class _SettingsState extends State<Settings> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   InkWell(
                     borderRadius: BorderRadius.circular(16),
                     onTap: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Languages()));
+                          MaterialPageRoute(builder: (context) => const Languages()));
                     },
                     child: Container(
                       height: 64,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16),
-                        border: Border.all(color: Color(0xFFE9F1FF)),
+                        border: Border.all(color: const Color(0xFFE9F1FF)),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.only(
@@ -377,7 +377,7 @@ class _SettingsState extends State<Settings> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   InkWell(
@@ -387,7 +387,7 @@ class _SettingsState extends State<Settings> {
                       height: 64,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16),
-                        border: Border.all(color: Color(0xFFE9F1FF)),
+                        border: Border.all(color: const Color(0xFFE9F1FF)),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.only(
@@ -410,7 +410,7 @@ class _SettingsState extends State<Settings> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   InkWell(
@@ -420,7 +420,7 @@ class _SettingsState extends State<Settings> {
                       height: 64,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16),
-                        border: Border.all(color: Color(0xFFE9F1FF)),
+                        border: Border.all(color: const Color(0xFFE9F1FF)),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.only(
@@ -443,7 +443,7 @@ class _SettingsState extends State<Settings> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   )
                 ],

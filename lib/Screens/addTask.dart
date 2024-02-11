@@ -18,6 +18,8 @@ class TeamMember {
 }
 
 class AddTask extends StatefulWidget {
+  const AddTask({super.key});
+
   @override
   State<AddTask> createState() => _AddTaskState();
 }
@@ -42,12 +44,12 @@ class _AddTaskState extends State<AddTask> {
           builder: (BuildContext context, StateSetter setState) {
             return Dialog(
               child: Container(
-                padding: EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(16.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text('Select Team Members'),
-                    SizedBox(height: 16),
+                    const Text('Select Team Members'),
+                    const SizedBox(height: 16),
                     SingleChildScrollView(
                       child: Column(
                         children: [
@@ -69,7 +71,7 @@ class _AddTaskState extends State<AddTask> {
                         ],
                       ),
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     ElevatedButton(
                       onPressed: () {
                         List<TeamMember> selected =
@@ -78,7 +80,7 @@ class _AddTaskState extends State<AddTask> {
                         }).toList();
                         Navigator.of(context).pop(selected);
                       },
-                      child: Text('Save'),
+                      child: const Text('Save'),
                     ),
                   ],
                 ),
@@ -89,12 +91,10 @@ class _AddTaskState extends State<AddTask> {
       },
     );
 
-    if (result != null) {
-      setState(() {
-        selectedMembers = result;
-      });
+    setState(() {
+      selectedMembers = result;
+    });
     }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -108,7 +108,7 @@ class _AddTaskState extends State<AddTask> {
           },
         ),
         backgroundColor: Colors.transparent,
-        foregroundColor: Color(0xFF002055),
+        foregroundColor: const Color(0xFF002055),
         shadowColor: Colors.transparent,
       ),
       body: Padding(
@@ -127,7 +127,7 @@ class _AddTaskState extends State<AddTask> {
               ),
             ),
             AppTextField(hintText: "Enter task name", obscureText: false),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Text(
               "Team Members",
               style: GoogleFonts.poppins(
@@ -138,22 +138,22 @@ class _AddTaskState extends State<AddTask> {
                 ),
               ),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Row(
               children: [
                 Container(
-                  margin: EdgeInsets.only(
+                  margin: const EdgeInsets.only(
                     bottom: 16,
                   ),
                   decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      border: Border.all(color: Color(0xFF756EF3))),
+                      border: Border.all(color: const Color(0xFF756EF3))),
                   child: InkWell(
                       borderRadius: BorderRadius.circular(20),
                       onTap: () {
                         showSelectMembersDialog(context);
                       },
-                      child: CircleAvatar(
+                      child: const CircleAvatar(
                           radius: 22,
                           backgroundColor: Colors.transparent,
                           child: Icon(
@@ -161,7 +161,7 @@ class _AddTaskState extends State<AddTask> {
                             color: Color(0xFF756EF3),
                           ))),
                 ),
-                SizedBox(width: 8),
+                const SizedBox(width: 8),
                 Expanded(
                   child: SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
@@ -207,8 +207,8 @@ class _AddTaskState extends State<AddTask> {
                 ),
               ),
             ),
-            TextFieldCalendar(),
-            SizedBox(
+            const TextFieldCalendar(),
+            const SizedBox(
               height: 15,
             ),
             Row(
@@ -228,11 +228,11 @@ class _AddTaskState extends State<AddTask> {
                           ),
                         ),
                       ),
-                      TimeSelectionTextField(),
+                      const TimeSelectionTextField(),
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
                 Expanded(
@@ -249,13 +249,13 @@ class _AddTaskState extends State<AddTask> {
                           ),
                         ),
                       ),
-                      TimeSelectionTextField()
+                      const TimeSelectionTextField()
                     ],
                   ),
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             Text(
@@ -268,7 +268,7 @@ class _AddTaskState extends State<AddTask> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 5,
             ),
             TabWidget(
@@ -276,22 +276,22 @@ class _AddTaskState extends State<AddTask> {
               second: "Running",
               third: "Ongoing",
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Center(
               child: GradientButton(
                 onPressed: () {},
-                child: Text(
+                gradientColors: const [Color(0xFF756EF3), Color(0xFF756EF3)],
+                width: MediaQuery.of(context).size.width * 0.70,
+                height: 60.0,
+                child: const Text(
                   'Save',
                   style: TextStyle(
                     fontSize: 20,
                     color: Colors.white,
                   ),
                 ),
-                gradientColors: [Color(0xFF756EF3), Color(0xFF756EF3)],
-                width: MediaQuery.of(context).size.width * 0.70,
-                height: 60.0,
               ),
             ),
           ],

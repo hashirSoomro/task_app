@@ -28,34 +28,34 @@ class _SignUpState extends State<SignUp> {
           },
         ),
         backgroundColor: Colors.transparent,
-        foregroundColor: Color(0xFF002055),
+        foregroundColor: const Color(0xFF002055),
         shadowColor: Colors.transparent,
       ),
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.only(top: 36, left: 24, right: 24),
+          padding: const EdgeInsets.only(top: 36, left: 24, right: 24),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               HeadingText(headingText: "Create Account"),
-              SizedBox(
+              const SizedBox(
                 height: 14,
               ),
               SubHeadingText(
                   subHeadingText:
                       "Please enter your information\nto create your account."),
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
               AppTextField(
                 hintText: "Enter your name",
                 obscureText: false,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               AppTextField(hintText: "Enter your email", obscureText: false),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               AppTextField(hintText: "Enter your password", obscureText: true),
@@ -71,20 +71,20 @@ class _SignUpState extends State<SignUp> {
                               MaterialPageRoute(builder: (context) => SignUp()),
                             );*/
                   },
-                  child: Text(
+                  gradientColors: const [Color(0xFF756EF3), Color(0xFF756EF3)],
+                  width:
+                      MediaQuery.of(context).size.width * 0.85, // Set the width
+                  height: 60.0,
+                  child: const Text(
                     'Sign Up',
                     style: TextStyle(
                       fontSize: 20,
                       color: Colors.white,
                     ),
-                  ),
-                  gradientColors: [Color(0xFF756EF3), Color(0xFF756EF3)],
-                  width:
-                      MediaQuery.of(context).size.width * 0.85, // Set the width
-                  height: 60.0, // Set the height
+                  ), // Set the height
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Center(
@@ -100,7 +100,7 @@ class _SignUpState extends State<SignUp> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               Row(
@@ -116,7 +116,7 @@ class _SignUpState extends State<SignUp> {
                       height: 55.0,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 30,
                   ),
                   InkWell(
@@ -131,7 +131,7 @@ class _SignUpState extends State<SignUp> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Row(
@@ -151,7 +151,7 @@ class _SignUpState extends State<SignUp> {
                   InkWell(
                     onTap: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => SignIn()));
+                          MaterialPageRoute(builder: (context) => const SignIn()));
                     },
                     child: Text(
                       "Sign In",

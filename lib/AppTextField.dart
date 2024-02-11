@@ -5,7 +5,7 @@ class AppTextField extends StatefulWidget {
   String hintText;
   bool obscureText;
 
-  AppTextField({required this.hintText, required this.obscureText});
+  AppTextField({super.key, required this.hintText, required this.obscureText});
 
   @override
   State<AppTextField> createState() => _AppTextFieldState();
@@ -16,7 +16,7 @@ class _AppTextFieldState extends State<AppTextField> {
   Widget build(BuildContext context) {
     return TextField(
         obscureText: widget.obscureText,
-        cursorColor: Color(0xFF756EF3),
+        cursorColor: const Color(0xFF756EF3),
         decoration: InputDecoration(
           hintText: widget.hintText,
           hintStyle: GoogleFonts.poppins(
@@ -29,10 +29,10 @@ class _AppTextFieldState extends State<AppTextField> {
           enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(20),
               borderSide:
-                  BorderSide(color: Color.fromARGB(255, 202, 209, 221))),
+                  const BorderSide(color: Color.fromARGB(255, 202, 209, 221))),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(20),
-            borderSide: BorderSide(
+            borderSide: const BorderSide(
               color: Color(0xFF756EF3),
             ),
           ),

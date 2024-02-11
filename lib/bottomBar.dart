@@ -14,10 +14,10 @@ class BottomBar extends StatefulWidget {
 }
 
 class _BottomBarState extends State<BottomBar> {
-  Color homeIconColor = Color(0xFF848A94);
-  Color folderIconColor = Color(0xFF848A94);
-  Color chatIconColor = Color(0xFF848A94);
-  Color profileIconColor = Color(0xFF848A94);
+  Color homeIconColor = const Color(0xFF848A94);
+  Color folderIconColor = const Color(0xFF848A94);
+  Color chatIconColor = const Color(0xFF848A94);
+  Color profileIconColor = const Color(0xFF848A94);
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -29,19 +29,19 @@ class _BottomBarState extends State<BottomBar> {
           InkWell(
             onTap: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Home()));
+                  context, MaterialPageRoute(builder: (context) => const Home()));
               setState(() {
-                folderIconColor = Color(0xFF848A94);
-                homeIconColor = Color(0xFF756EF3);
-                chatIconColor = Color(0xFF848A94);
-                profileIconColor = Color(0xFF848A94);
+                folderIconColor = const Color(0xFF848A94);
+                homeIconColor = const Color(0xFF756EF3);
+                chatIconColor = const Color(0xFF848A94);
+                profileIconColor = const Color(0xFF848A94);
               });
             },
             child: CircleAvatar(
               radius: 26,
               backgroundColor: Colors.transparent,
               child: ImageIcon(
-                AssetImage('assets/icons/Home.png'),
+                const AssetImage('assets/icons/Home.png'),
                 size: 24,
                 color: homeIconColor,
               ),
@@ -50,40 +50,40 @@ class _BottomBarState extends State<BottomBar> {
           InkWell(
             onTap: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Projects()));
+                  context, MaterialPageRoute(builder: (context) => const Projects()));
 
-              folderIconColor = Color(0xFF756EF3);
-              homeIconColor = Color(0xFF848A94);
-              chatIconColor = Color(0xFF848A94);
-              profileIconColor = Color(0xFF848A94);
+              folderIconColor = const Color(0xFF756EF3);
+              homeIconColor = const Color(0xFF848A94);
+              chatIconColor = const Color(0xFF848A94);
+              profileIconColor = const Color(0xFF848A94);
             },
             child: CircleAvatar(
               radius: 26,
               backgroundColor: Colors.transparent,
               child: ImageIcon(
-                AssetImage('assets/icons/Folder.png'),
+                const AssetImage('assets/icons/Folder.png'),
                 size: 24,
                 color: folderIconColor,
               ),
             ),
           ),
-          AddButton(),
+          const AddButton(),
           InkWell(
             onTap: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Chat()));
+                  context, MaterialPageRoute(builder: (context) => const Chat()));
               setState(() {
-                folderIconColor = Color(0xFF848A94);
-                homeIconColor = Color(0xFF848A94);
-                chatIconColor = Color(0xFF756EF3);
-                profileIconColor = Color(0xFF848A94);
+                folderIconColor = const Color(0xFF848A94);
+                homeIconColor = const Color(0xFF848A94);
+                chatIconColor = const Color(0xFF756EF3);
+                profileIconColor = const Color(0xFF848A94);
               });
             },
             child: CircleAvatar(
               radius: 26,
               backgroundColor: Colors.transparent,
               child: ImageIcon(
-                AssetImage('assets/icons/Chat.png'),
+                const AssetImage('assets/icons/Chat.png'),
                 size: 24,
                 color: chatIconColor,
               ),
@@ -92,19 +92,19 @@ class _BottomBarState extends State<BottomBar> {
           InkWell(
             onTap: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Profile()));
+                  context, MaterialPageRoute(builder: (context) => const Profile()));
               setState(() {
-                folderIconColor = Color(0xFF848A94);
-                homeIconColor = Color(0xFF848A94);
-                chatIconColor = Color(0xFF848A94);
-                profileIconColor = Color(0xFF756EF3);
+                folderIconColor = const Color(0xFF848A94);
+                homeIconColor = const Color(0xFF848A94);
+                chatIconColor = const Color(0xFF848A94);
+                profileIconColor = const Color(0xFF756EF3);
               });
             },
             child: CircleAvatar(
               radius: 26,
               backgroundColor: Colors.transparent,
               child: ImageIcon(
-                AssetImage('assets/icons/Profile.png'),
+                const AssetImage('assets/icons/Profile.png'),
                 size: 24,
                 color: profileIconColor,
               ),

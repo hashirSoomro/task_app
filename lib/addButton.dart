@@ -3,8 +3,6 @@ import "package:flutter/material.dart";
 import "package:google_fonts/google_fonts.dart";
 import "package:task_app/Screens/addTask.dart";
 import "package:task_app/Screens/addTeam.dart";
-import 'package:image_picker/image_picker.dart';
-import 'dart:io';
 
 class AddButton extends StatefulWidget {
   const AddButton({super.key});
@@ -43,21 +41,21 @@ class _AddButtonState extends State<AddButton> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Image.asset("assets/icons/Rectangle.png",
-                              color: Color(0xFFE9F1FF)),
+                              color: const Color(0xFFE9F1FF)),
                           InkWell(
                             onTap: () {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => AddTask()));
+                                      builder: (context) => const AddTask()));
                             },
-                            child: AddButtonContainer(
+                            child: const AddButtonContainer(
                                 icon: "assets/icons/EditSquare.png",
                                 text: "Create Task"),
                           ),
                           InkWell(
                             onTap: () {},
-                            child: AddButtonContainer(
+                            child: const AddButtonContainer(
                                 icon: "assets/icons/Plus.png",
                                 text: "Create Project"),
                           ),
@@ -66,15 +64,15 @@ class _AddButtonState extends State<AddButton> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => AddTeam()));
+                                      builder: (context) => const AddTeam()));
                             },
-                            child: AddButtonContainer(
+                            child: const AddButtonContainer(
                                 icon: "assets/icons/Users.png",
                                 text: "Create Team"),
                           ),
                           InkWell(
                             onTap: () {},
-                            child: AddButtonContainer(
+                            child: const AddButtonContainer(
                                 icon: "assets/icons/TimeCircle.png",
                                 text: "Create Event"),
                           ),
@@ -82,7 +80,7 @@ class _AddButtonState extends State<AddButton> {
                             onTap: () {
                               Navigator.pop(context);
                             },
-                            child: CircleAvatar(
+                            child: const CircleAvatar(
                               radius: 26,
                               backgroundColor: Color(0xFF756EF3),
                               child: ImageIcon(
@@ -98,7 +96,7 @@ class _AddButtonState extends State<AddButton> {
                   ],
                 ));
       },
-      child: CircleAvatar(
+      child: const CircleAvatar(
         radius: 26,
         backgroundColor: Color(0xFF756EF3),
         child: ImageIcon(
@@ -115,7 +113,7 @@ class AddButtonContainer extends StatefulWidget {
   final String icon;
   final String text;
 
-  AddButtonContainer({required this.icon, required this.text});
+  const AddButtonContainer({super.key, required this.icon, required this.text});
 
   @override
   State<AddButtonContainer> createState() => _AddButtonContainerState();
@@ -128,8 +126,8 @@ class _AddButtonContainerState extends State<AddButtonContainer> {
       height: 56,
       width: 327,
       decoration: BoxDecoration(
-          border: Border.all(color: Color(0xFFE9F1FF)),
-          color: Color(0xFFFFFFFF),
+          border: Border.all(color: const Color(0xFFE9F1FF)),
+          color: const Color(0xFFFFFFFF),
           borderRadius: BorderRadius.circular(12)),
       child: Padding(
         padding: const EdgeInsets.only(left: 18.0),
@@ -140,7 +138,7 @@ class _AddButtonContainerState extends State<AddButtonContainer> {
               width: 18.84,
               height: 18.87,
             ),
-            SizedBox(
+            const SizedBox(
               width: 13,
             ),
             Text(

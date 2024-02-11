@@ -3,6 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 
 class CalendarWidget extends StatefulWidget {
+  const CalendarWidget({super.key});
+
   @override
   State<CalendarWidget> createState() => _CalendarWidgetState();
 }
@@ -25,7 +27,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
         lastDayOfMonth.difference(firstDayOfMonth).inDays + 1;
     return Padding(
       padding: const EdgeInsets.only(top: 20, bottom: 20),
-      child: Container(
+      child: SizedBox(
         height: 118,
         child: Expanded(
           child: ListView.builder(
@@ -44,7 +46,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                   });
                 },
                 child: Container(
-                  margin: EdgeInsets.only(right: 12),
+                  margin: const EdgeInsets.only(right: 12),
                   height: 118,
                   width: 64,
                   decoration: BoxDecoration(
@@ -52,10 +54,10 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                     border: Border.all(
                       color: selectedContainerIndex == index
                           ? Colors.transparent
-                          : Color.fromARGB(255, 218, 230, 250),
+                          : const Color.fromARGB(255, 218, 230, 250),
                     ),
                     color: selectedContainerIndex == index
-                        ? Color(0xFF756EF3)
+                        ? const Color(0xFF756EF3)
                         : Colors.white,
                   ),
                   child: Column(
@@ -70,7 +72,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                               fontWeight: FontWeight.w500,
                               color: selectedContainerIndex == index
                                   ? Colors.white
-                                  : Color(0xFF848A94),
+                                  : const Color(0xFF848A94),
                               height: 1.2,
                             ),
                           ),
@@ -85,7 +87,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                               fontWeight: FontWeight.w500,
                               color: selectedContainerIndex == index
                                   ? Colors.white
-                                  : Color(0xFF848A94),
+                                  : const Color(0xFF848A94),
                               height: 1.2,
                             ),
                           ),
